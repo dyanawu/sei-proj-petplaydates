@@ -6,13 +6,13 @@
 </p>
 
 <p>
-  <strong>Dp url:</strong>
-  <%= @pet.dp_url %>
+  <%= image_tag @pet.dp_url, class: 'img-fluid' %>
+
 </p>
 
 <p>
   <strong>Species:</strong>
-  <%= @pet.species %>
+  <%= @pet.species.name.capitalize %>
 </p>
 
 <p>

@@ -1,5 +1,8 @@
 class Pet < ApplicationRecord
       belongs_to :species
-      belongs_to :user
-      has_many :events
+      has_and_belongs_to_many :events
+
+      validates :name, presence: true, length: {minimum: 2, maximum: 100}
+      validates :bio, presence: true, length: {minimum: 2, maximum: 400}
+      validates :birthday, presence: true
 end

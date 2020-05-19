@@ -1,3 +1,45 @@
 // Place all the styles related to the pets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+#species-options {
+
+      width: 50%;
+
+      ul {
+      	list-style: none;
+      }
+
+      li {
+      	display: inline-block;
+      	margin-right: 15px;
+      }
+
+      input {
+      	visibility: hidden;
+      }
+
+      label {
+            cursor: pointer;
+            width: 300px;
+            height: 300px;
+            padding: 30px;
+            border-radius: 30px;
+      }
+
+
+      label img {
+            width: 100%
+      }
+
+      input:checked+label {
+            border: 5px solid white;
+            background-color: palevioletred;
+      }
+
+      label:hover{
+            background-color: palevioletred;
+      }
+
+}
+

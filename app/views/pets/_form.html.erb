@@ -11,32 +11,43 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+  <div id="species-options" class="mx-auto mb-5">
+
+        <% Species.all.each do |species| %>
+            <%= radio_button_tag("pet[species_id]", species.id) %>
+            <%= label_tag "pet_species_id_#{species.id}", image_tag("pets/#{species.name}") %>
+    <% end %>  
+  
   </div>
 
-  <div class="field">
-    <%= form.label :dp_url %>
-    <%= form.text_field :dp_url %>
+  <div class="form-row">
+
+    <div class="form-group col-md-6"">
+      <%= form.label :name %>
+      <%= form.text_field :name, :required => true, :class => "form-control"  %>
+    </div>
+      <div class="form-group col-md-6"">
+      <%= form.label :dp_url, "Image" %>
+      <%= form.text_field :dp_url, :required => true, :class => "form-control" %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :species %>
-    <%= form.text_field :species %>
-  </div>
+  <div class="form-row">
 
-  <div class="field">
-    <%= form.label :birthday %>
-    <%= form.date_select :birthday %>
+    <div class="form-group col-md-6"">
+      <%= form.label :birthday %>
+      <%= form.date_select :birthday, {start_year: Date.today.year - 30, end_year: Date.today.year}, {:class=> "form-control"} %>
+    </div>
   </div>
+  <div class="form-row">
 
-  <div class="field">
+  <div class="form-group col-md-12">
     <%= form.label :bio %>
-    <%= form.text_area :bio %>
+    <%= form.text_area :bio, :required => true, :class => "form-control" %>
+  </div>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Add Pet", :required => true, :class => "btn btn-success" %>
   </div>
 <% end %>
