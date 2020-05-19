@@ -8,15 +8,12 @@
     <%= javascript_pack_tag 'application' %>
   </head>
 
-  <body>
-    <%= yield %>
-    <%= link_to "LOG IN", new_user_session_url %>
-    <%= link_to "LOG OUT", destroy_user_session_url, method: :delete %>
-  </body>
   <div class="row">
     <div class="col">
       <body>
         <%= yield %>
+        <%= link_to "LOG IN", new_user_session_url %>
+        <%= link_to "LOG OUT", destroy_user_session_url, method: :delete %>
       </body>
     </div>
   </div>
