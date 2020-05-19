@@ -1,6 +1,8 @@
+# require 'time'
+require "active_support/all"
+
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
-
   # GET /events
   # GET /events.json
   def index
@@ -24,7 +26,7 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
-    @event = Event.new(event_params)
+    @event = parse_event_to_local_time(Event.new(event_params))
 
     respond_to do |format|
       if @event.save
@@ -67,8 +69,18 @@ class EventsController < ApplicationController
       @event = Event.find(params[:id])
     end
 
+    def parse_event_to_local_time (event) 
+      event.start_time = parse_time_to_singapore(event.start_time)
+      event.end_time = parse_time_to_singapore(event.end_time)
+      event
+    end
+
+    def parse_time_to_singapore (time)
+      time - 8.hours
+    end
+
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:title, :description, :capacity, :location, :start_time, :end_time, :min_pets, :pet_ids => [])
+      params.require(:event).permit(:title, :description, :capacity, :location, :start_time, :end_time, :min_pets, :timezone, :pet_ids => [])
     end
 end
