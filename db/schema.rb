@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_19_092835) do
+ActiveRecord::Schema.define(version: 2020_05_19_105625) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2020_05_19_092835) do
     t.integer "min_pets"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_events_on_user_id"
   end
 
   create_table "events_pets", force: :cascade do |t|
@@ -44,7 +46,9 @@ ActiveRecord::Schema.define(version: 2020_05_19_092835) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "species_id", null: false
+    t.bigint "user_id", null: false
     t.index ["species_id"], name: "index_pets_on_species_id"
+    t.index ["user_id"], name: "index_pets_on_user_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -80,5 +84,7 @@ ActiveRecord::Schema.define(version: 2020_05_19_092835) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "events", "users"
   add_foreign_key "pets", "species"
+  add_foreign_key "pets", "users"
 end
