@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  capacity: 1
+  location: MyString
+  start_time: 2020-05-19 10:42:46
+  end_time: 2020-05-19 10:42:46
+  min_pets: 1
+
+two:
+  title: MyString
+  description: MyText
+  capacity: 1
+  location: MyString
+  start_time: 2020-05-19 10:42:46
+  end_time: 2020-05-19 10:42:46
+  min_pets: 1
