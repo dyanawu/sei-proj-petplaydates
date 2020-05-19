@@ -2,9 +2,23 @@
 
 <h1>Events</h1>
 
+<div id="events-calendar">
+<%= month_calendar events: @events do |date, events| %>
+  <%=  date.strftime("%d %b") %>
+
+  <% events.each do |event| %>
+    <div>
+      <%= link_to event.title, event_path(event) %>
+    </div>
+  <% end %>
+<% end %>
+</div>
+
 <table>
   <thead>
     <tr>
+          <th>#</th>
+
       <th>Title</th>
       <th>Description</th>
       <th>Capacity</th>
@@ -17,8 +31,9 @@
   </thead>
 
   <tbody>
-    <% @events.each do |event| %>
+    <% @events.each_with_index do |event, i| %>
       <tr>
+              <td><%= event.id%></td>
         <td><%= event.title %></td>
         <td><%= event.description %></td>
         <td><%= event.capacity %></td>
