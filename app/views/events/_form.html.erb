@@ -33,7 +33,7 @@
 
   <div class="field">
     <%= form.label :start_time %>
-    <%= form.datetime_select :start_time %>
+    <span><%= form.datetime_select :start_time, { order: [:day, :month, :year] }, { class: "form-control" }%></span>
   </div>
 
   <div class="field">
@@ -50,3 +50,4 @@
     <%= form.submit %>
   </div>
 <% end %>
+
