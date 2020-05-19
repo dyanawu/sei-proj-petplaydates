@@ -14,7 +14,7 @@
   <div id="species-options" class="text-center mb-5">
         <% Species.all.each do |species| %>
             <%= radio_button_tag("pet[species_id]", species.id) %>
-            <%= label_tag "pet_species_id_#{species.id}", image_tag("pets/#{species.name.downcase}") %>
+            <%= label_tag "pet_species_id_#{species.id}", image_tag("pets/#{species.name}") %>
     <% end %>
 
   </div>
