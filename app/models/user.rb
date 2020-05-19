@@ -5,7 +5,6 @@ class User < ApplicationRecord
   has_one :profile
   has_many :pets
   has_many :events
-
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable,
          :validatable, authentication_keys: [:login]
