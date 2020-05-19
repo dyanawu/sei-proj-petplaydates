@@ -9,6 +9,7 @@
 # migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
+
 ActiveRecord::Schema.define(version: 2020_05_19_062729) do
 
   # These are extensions that must be enabled in order to support this database
@@ -38,7 +39,6 @@ ActiveRecord::Schema.define(version: 2020_05_19_062729) do
   create_table "pets", force: :cascade do |t|
     t.string "name"
     t.string "dp_url"
-    t.string "species"
     t.date "birthday"
     t.text "bio"
     t.datetime "created_at", precision: 6, null: false
@@ -50,8 +50,6 @@ ActiveRecord::Schema.define(version: 2020_05_19_062729) do
   create_table "species", force: :cascade do |t|
     t.string "name"
   end
-
-  add_foreign_key "pets", "species"
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -71,4 +69,6 @@ ActiveRecord::Schema.define(version: 2020_05_19_062729) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
   end
+
+  add_foreign_key "pets", "species"
 end
