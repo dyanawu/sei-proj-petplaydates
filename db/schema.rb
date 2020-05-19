@@ -52,7 +52,6 @@ ActiveRecord::Schema.define(version: 2020_05_19_062729) do
   end
 
   add_foreign_key "pets", "species"
-  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
