@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: a8809691a115df5f2793c509c7a05fd87483b967
+  branch: master
+  specs:
+    faker (2.11.0)
+      i18n (>= 1.6, < 2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -178,6 +186,8 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
+    simple_calendar (2.3.0)
+      rails (>= 3.0)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -225,6 +235,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   devise
+  faker!
   jbuilder (~> 2.7)
   jquery-rails
   listen (~> 3.2)
@@ -233,6 +244,7 @@ DEPENDENCIES
   rails (~> 6.0.3)
   sass-rails (>= 6)
   selenium-webdriver
+  simple_calendar (~> 2.0)
   spring
   spring-watcher-listen (~> 2.0.0)
   tzinfo-data
