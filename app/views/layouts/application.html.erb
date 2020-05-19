@@ -7,14 +7,15 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
   </head>
-
-  <div class="row">
-    <div class="col">
-      <body>
-        <%= yield %>
-        <%= link_to "LOG IN", new_user_session_url %>
-        <%= link_to "LOG OUT", destroy_user_session_url, method: :delete %>
-      </body>
+  <body>
+    <div>
+      <div class="row">
+        <div class="col">
+          <%= yield %>
+          <%= link_to "LOG IN", new_user_session_url %>
+          <%= link_to "LOG OUT", destroy_user_session_url, method: :delete %>
+        </div>
+      </div>
     </div>
-  </div>
+  </body>
 </html>
