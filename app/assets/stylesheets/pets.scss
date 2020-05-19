@@ -3,18 +3,6 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 #species-options {
-
-      width: 50%;
-
-      ul {
-      	list-style: none;
-      }
-
-      li {
-      	display: inline-block;
-      	margin-right: 15px;
-      }
-
       input {
       	visibility: hidden;
       }
@@ -34,11 +22,11 @@
 
       input:checked+label {
             border: 5px solid white;
-            background-color: palevioletred;
+            background-color: grey;
       }
 
       label:hover{
-            background-color: palevioletred;
+            background-color: grey;
       }
 
 }
