@@ -22,12 +22,12 @@
 
 <p>
   <strong>Start time:</strong>
-  <%= @event.start_time %>
+  <%= @event.start_time.getlocal.strftime("%d %B %Y, %H:%M") %>
 </p>
 
 <p>
   <strong>End time:</strong>
-  <%= @event.end_time %>
+  <%= @event.end_time.getlocal.strftime("%d %B %Y, %H:%M") %>
 </p>
 
 <p>

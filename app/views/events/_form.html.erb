@@ -2,7 +2,6 @@
   <% if event.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(event.errors.count, "error") %> prohibited this event from being saved:</h2>
-
       <ul>
         <% event.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -10,44 +9,37 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.label :title, "Title:" %>
+    <%= form.text_field :title, class: "form-control" %>
+  </div>
+  <div class="field">
+    <%= form.label :description, "Description:" %>
+    <%= form.text_area :description, class:"form-control" %>
+  </div>
+  <div class="field">
+    <%= form.label :capacity, "Capacity:" %>
+    <%= form.number_field :capacity, class:"form-control" %>
+  </div>
+  <div class="field">
+    <%= form.label :location, "Location:" %>
+    <%= form.text_field :location, class:"form-control" %>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
 
-  <div class="field">
-    <%= form.label :capacity %>
-    <%= form.number_field :capacity %>
+  <div class="field form-group">
+    <%= form.label :start_time, "Start Time:" %>
+    <div class="form-inline"><span><%= form.datetime_select :start_time, { order: [:day, :month, :year] }, { class: "form-control" }%></span></div>
   </div>
-
-  <div class="field">
-    <%= form.label :location %>
-    <%= form.text_field :location %>
+  <div class="field form-group">
+    <%= form.label :end_time, "End Time" %>
+    <div class="form-inline"><span><%= form.datetime_select :end_time, { order: [:day, :month, :year] }, { class: "form-control" }%></span></div>
   </div>
-
-  <div class="field">
-    <%= form.label :start_time %>
-    <span><%= form.datetime_select :start_time, { order: [:day, :month, :year] }, { class: "form-control" }%></span>
+  <div class="field" hidden>
+    <%= form.label :min_pets, "Minimum Pet Participation:" %>
+    <%= form.number_field :min_pets, class:"form-control", value:"0" %>
   </div>
-
-  <div class="field">
-    <%= form.label :end_time %>
-    <%= form.datetime_select :end_time %>
-  </div>
-
-  <div class="field">
-    <%= form.label :min_pets %>
-    <%= form.number_field :min_pets %>
-  </div>
-
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Create Event", class:"btn btn-primary"%>
   </div>
 <% end %>
-
