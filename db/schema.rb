@@ -26,6 +26,15 @@ ActiveRecord::Schema.define(version: 2020_05_19_062729) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "events_pets", force: :cascade do |t|
+    t.bigint "event_id"
+    t.bigint "pet_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id"], name: "index_events_pets_on_event_id"
+    t.index ["pet_id"], name: "index_events_pets_on_pet_id"
+  end
+
   create_table "pets", force: :cascade do |t|
     t.string "name"
     t.string "dp_url"
