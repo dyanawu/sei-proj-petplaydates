@@ -4,7 +4,6 @@
     <title>Pet Playdates</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_pack_tag 'application' %>
   </head>
@@ -14,4 +13,11 @@
     <%= link_to "LOG IN", new_user_session_url %>
     <%= link_to "LOG OUT", destroy_user_session_url, method: :delete %>
   </body>
+  <div class="row">
+    <div class="col">
+      <body>
+        <%= yield %>
+      </body>
+    </div>
+  </div>
 </html>
