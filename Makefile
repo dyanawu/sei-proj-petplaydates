@@ -6,12 +6,14 @@ dbsync:
 	heroku pg:push $(DB_NAME) DATABASE_URL -a $(APP_NAME)
 
 prep:
+	rake assets:clobber
 	rails assets:precompile
 	git add .
 	git commit -m "Precompile for prod"
 	git status
 
 deploy: dbsync
+	prep
 	git push dyanawu heroku
 
 .PHONY: dbsync prep deploy
