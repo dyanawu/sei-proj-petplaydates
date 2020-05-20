@@ -1,7 +1,7 @@
 console.log("new event script!");
 
 //URL based needs to change after deploy
-let URLBase = "http://localhost:3000";
+let URLBase = "https://pet-playdates.herokuapp.com/";
 let apiURL = URLBase + "/api";
 
 function findAddress() {
@@ -60,7 +60,7 @@ function findAddress() {
         selectDiv.appendChild(select);
         //If there are no search results, communicate to user
       } else {
-        let message = "No matching locations found. Please try again."
+        let message = "No matching locations found. Please try again.";
         let selectDiv = document.getElementById("location-select");
         selectDiv.textContent = "";
         let messageP = document.createElement("p");
