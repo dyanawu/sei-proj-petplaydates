@@ -1,1 +1,0 @@
-#species-options input{visibility:hidden}#species-options label{cursor:pointer;width:300px;height:300px;padding:30px;border-radius:30px}#species-options label img{width:100%}#species-options input:checked+label{border:5px solid white;background-color:grey}#species-options label:hover{background-color:grey}
