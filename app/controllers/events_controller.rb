@@ -12,6 +12,22 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    if user_signed_in?
+      @pets = current_user.pets
+    end
+  end
+
+  def rsvp
+    @event = Event.find(params[:id])
+    @pets_ids = event_params[:pet_ids].reject!(&:blank?)
+    @pets_ids.each do |id|
+      pet = Pet.find(id)
+      if !pet.is_rsvped(@event)
+        @event.pets << pet
+      end
+    end
+
+    redirect_to @event
   end
 
   # GET /events/new

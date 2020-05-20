@@ -12,7 +12,7 @@
 
 <p>
   <strong>Capacity:</strong>
-  <%= @event.capacity %>
+  <%= @event.pets.count %> / <%= @event.capacity %>
 </p>
 
 <p>
@@ -35,5 +35,55 @@
   <%= @event.min_pets %>
 </p>
 
+<h3>Pets Participating</h3>
+
+<% if @event.pets.count!=0%>
+
+<ul>
+<% @event.pets.each do |pet| %>
+  <li><%= link_to pet.name, pet_path(pet) %></li>
+<%end %>
+</ul>
+<% else %>
+
+<p>No pets have joined yet.</p>
+
+<% end %>
+
+<h2>Join in the fun</h2>
+
+<% if @event.status=="open"%>
+
+  <div class="alert alert-success">
+    Event starts in <%=@event.time_left%>!
+  </div>
+
+  <% if user_signed_in? && current_user.pets.count!=0 %>
+    <%= form_with scope: :event, url: rsvp_path, local: true do |form| %>
+    <p>
+            <%= form.collection_check_boxes :pet_ids, current_user.pets, :id, :name %>
+    </p>
+    <p>
+      <%= form.submit %>
+    </p>
+    <% end %>
+
+  <% elsif !user_signed_in? %>
+    <p>Please <%= link_to "sign in", user_session_path %> to RSVP.</p>
+
+  <% elsif current_user.pets.count==0 %>
+    <p>Oops, you haven't added your pets yet. Head <%=link_to 'here', new_pet_path %> to add your pet!</p>
+  <% end %>
+
+  <% elsif @event.status=="full" %>
+    <div class="alert alert-warning">Sorry, the event has reached its max number of participants.</div>
+  
+  <% elsif @event.status=='past' %>
+    <div class="alert alert-danger">Sorry, the event has ended.</div>
+
+  <% elsif @event.status=="started"%>
+    <div class="alert alert-danger">Sorry, the event has already started.</div>
+
+  <%end %>
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
