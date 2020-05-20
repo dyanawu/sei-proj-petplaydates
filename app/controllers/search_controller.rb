@@ -8,7 +8,7 @@ class SearchController < ApplicationController
 
     puts params
 
-    inputText = params['inputText']
+    inputText = params[:inputText]
 
     uri = URI('https://maps.googleapis.com/maps/api/place/findplacefromtext/json')
     apiKey = "AIzaSyAmlsvjUNhN1BUTmvSq9SKhq8b0r4qXwAc"
