@@ -1,0 +1,29 @@
+/* line 6, app/assets/stylesheets/pets.scss */
+#species-options input {
+  visibility: hidden;
+}
+
+/* line 10, app/assets/stylesheets/pets.scss */
+#species-options label {
+  cursor: pointer;
+  width: 300px;
+  height: 300px;
+  padding: 30px;
+  border-radius: 30px;
+}
+
+/* line 19, app/assets/stylesheets/pets.scss */
+#species-options label img {
+  width: 100%;
+}
+
+/* line 23, app/assets/stylesheets/pets.scss */
+#species-options input:checked + label {
+  border: 5px solid white;
+  background-color: grey;
+}
+
+/* line 28, app/assets/stylesheets/pets.scss */
+#species-options label:hover {
+  background-color: grey;
+}

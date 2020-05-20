@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :events
   resources :pets
 
+  get '/api' => 'search#getapi', as: 'get_api'
   get '/users', to: "users#index"
   get '/users/:id', to: "users#show", as: 'user'
 end
