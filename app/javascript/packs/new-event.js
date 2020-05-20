@@ -68,7 +68,6 @@ function findAddress() {
         messageP.textContent = message;
         selectDiv.appendChild(messageP);
       }
-     
     })
     .catch((error) => console.log("error", error));
 }
