@@ -80,7 +80,7 @@
     <div class="alert alert-warning">Sorry, the event has reached its max number of participants.</div>
   
   <% elsif @event.status=='past' %>
-    <div class="alert alert-danger">Sorry, the event has ended.</div>
+    <div class="alert alert-danger">Sorry, the event ended <%=@event.ended_since%> ago.</div>
 
   <% elsif @event.status=="started"%>
     <div class="alert alert-danger">Sorry, the event has already started.</div>
