@@ -23,16 +23,17 @@
   </div>
   <div class="field">
     <%= form.label :location, "Location:" %>
-    <%= form.text_field :location, class:"form-control" %>
+    <%= form.text_field :location, class:"form-control", id:"location-input" %>
   </div>
-
-
+  <a id="google-button" class="btn btn-secondary text-white">Search for Location</a>
+  <div id="location-select">
+  </div>
   <div class="field form-group">
     <%= form.label :start_time, "Start Time:" %>
     <div class="form-inline"><span><%= form.datetime_select :start_time, { order: [:day, :month, :year] }, { class: "form-control" }%></span></div>
   </div>
   <div class="field form-group">
-    <%= form.label :end_time, "End Time" %>
+    <%= form.label :end_time, "End Time:" %>
     <div class="form-inline"><span><%= form.datetime_select :end_time, { order: [:day, :month, :year] }, { class: "form-control" }%></span></div>
   </div>
   <div class="field" hidden>
