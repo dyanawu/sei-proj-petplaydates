@@ -34,4 +34,8 @@ class User < ApplicationRecord
       errors.add(:username, :invalid)
     end
   end
+
+  def events_attending
+    Event.joins(:pets).where(pets: {user_id: self.id})
+  end
 end
