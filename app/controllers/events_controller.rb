@@ -38,6 +38,7 @@ class EventsController < ApplicationController
   # POST /events.json
   def create
     @event = parse_event_to_local_time(Event.new(event_params))
+    @event.user = current_user
 
     respond_to do |format|
       if @event.save
