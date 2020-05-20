@@ -8,6 +8,7 @@
     <%= javascript_pack_tag 'application' %>
   </head>
   <body>
+    <%= render "layouts/navbar" %>
     <div class="container">
       <div class="row">
         <div class="col">
@@ -18,5 +19,8 @@
         </div>
       </div>
     </div>
+    <%= javascript_include_tag "jquery-3.5.1.min.js" %>
+    <%= javascript_include_tag "popper.min.js" %>
+    <%= javascript_include_tag "bootstrap.bundle.min.js" %>
   </body>
 </html>

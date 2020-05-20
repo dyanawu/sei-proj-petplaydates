@@ -1,0 +1,13 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <%= link_to 'Pet Playdates', root_path, :class => "navbar-brand" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="navbar-nav">
+      <%= link_to 'Events', events_path, :class => "nav-item nav-link" %>
+      <%= link_to 'Pets', pets_path, :class => "nav-item nav-link" %>
+      <%= link_to 'Users', users_path, :class => "nav-item nav-link" %>
+    </div>
+  </div>
+</nav>
