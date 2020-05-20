@@ -12,9 +12,6 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
-    if user_signed_in?
-      @pets = current_user.pets
-    end
   end
 
   def rsvp
