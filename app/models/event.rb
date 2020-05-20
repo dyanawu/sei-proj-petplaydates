@@ -22,4 +22,8 @@ require 'action_view'
     time_ago_in_words(self.start_time)
   end
 
+  def ended_since
+    time_ago_in_words(self.end_time)
+  end
+
 end
