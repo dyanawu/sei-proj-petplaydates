@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   root to: "events#index"
   resources :events
   resources :pets
+
+  get '/users', to: "users#index"
+  get '/users/:id', to: "users#show", as: 'user'
 end
