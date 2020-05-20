@@ -11,34 +11,38 @@
   <% end %>
   <div class="field">
     <%= form.label :title, "Title:" %>
-    <%= form.text_field :title, class: "form-control" %>
+    <%= form.text_field :title, class: "form-control", :required => true  %>
   </div>
   <div class="field">
     <%= form.label :description, "Description:" %>
-    <%= form.text_area :description, class:"form-control" %>
+    <%= form.text_area :description, class:"form-control", :required => true  %>
   </div>
   <div class="field">
     <%= form.label :capacity, "Capacity:" %>
-    <%= form.number_field :capacity, class:"form-control" %>
+    <%= form.number_field :capacity, class:"form-control", :required => true  %>
   </div>
   <div class="field">
     <%= form.label :location, "Location:" %>
-    <%= form.text_field :location, class:"form-control", id:"location-input" %>
+    <%= form.text_field :location, class:"form-control", id:"location-input", :required => true  %>
+
   </div>
-  <a id="google-button" class="btn btn-secondary text-white">Search for Location</a>
+
+    <a id="google-button" class="btn btn-secondary text-white">Search for Location</a>
+
   <div id="location-select">
+  
   </div>
   <div class="field form-group">
     <%= form.label :start_time, "Start Time:" %>
-    <div class="form-inline"><span><%= form.datetime_select :start_time, { order: [:day, :month, :year] }, { class: "form-control" }%></span></div>
+    <div class="form-inline"><span><%= form.datetime_select :start_time, {  selected: Time.now + 1.day, order: [:day, :month, :year] }, {class: "form-control", :required => true}%></span></div>
   </div>
   <div class="field form-group">
     <%= form.label :end_time, "End Time:" %>
-    <div class="form-inline"><span><%= form.datetime_select :end_time, { order: [:day, :month, :year] }, { class: "form-control" }%></span></div>
+    <div class="form-inline"><span><%= form.datetime_select :end_time, {selected: Time.now + 1.day, order: [:day, :month, :year] }, { class: "form-control", :required => true}%></span></div>
   </div>
   <div class="field" hidden>
     <%= form.label :min_pets, "Minimum Pet Participation:" %>
-    <%= form.number_field :min_pets, class:"form-control", value:"0" %>
+    <%= form.number_field :min_pets, class:"form-control", value:"0", :required => true  %>
   </div>
   <div class="actions">
     <%= form.submit "Create Event", class:"btn btn-primary"%>
