@@ -39,16 +39,16 @@ puts
 ## Fake Pets for random users
 30.times do
 
-    pet = Pet.create(name: Faker::Name.first_name, dp_url: Faker::LoremFlickr.image, species_id: rand(1..2), birthday: "#{rand(1990..2019)}-#{rand(1..12)}-#{rand(1-28)}", bio: Faker::Lorem.paragraph, user_id: rand(User.first.id..User.last.id))
+    pet = Pet.create(name: Faker::Name.first_name, dp_url: Faker::LoremFlickr.image, species_id: rand(1..2), birthday: "#{rand(1990..2019)}-#{rand(1..12)}-#{rand(1-28)}", bio: Faker::Lorem.paragraph, gender: Faker::Gender.short_binary_type, user_id: rand(User.first.id..User.last.id))
 
-    puts "Created #{pet.name} the #{pet.species.name} belonging to #{pet.user.username} (user id: #{pet.user.id})"
+    puts "Created #{pet.name} the #{pet.species.name} (#{pet.gender}) belonging to #{pet.user.username} (user id: #{pet.user.id})"
 end
 
 25.times{print"-"}
 puts
 
 
-## Generate fake events under random users 
+## Generate fake events under random users
 20.times do
     user = User.find(rand(User.first.id..User.last.id))
 
