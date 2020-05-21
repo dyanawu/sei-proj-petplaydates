@@ -19,7 +19,7 @@
   </div>
   <div class="field">
     <%= form.label :capacity, "Capacity:" %>
-    <%= form.number_field :capacity, class:"form-control", :required => true  %>
+    <%= form.number_field :capacity, min:2, class:"form-control", :value => 2, :required => true  %>
   </div>
   <div class="field">
     <%= form.label :location, "Location:" %>

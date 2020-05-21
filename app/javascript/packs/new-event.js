@@ -1,6 +1,6 @@
 console.log("new event script!");
 
-//URL based needs to change after deploy
+//URL base needs to change after deploy
 let URLBase = "http://localhost:3000";
 let apiURL = URLBase + "/api";
 
