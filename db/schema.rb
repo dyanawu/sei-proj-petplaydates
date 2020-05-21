@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_21_084009) do
+ActiveRecord::Schema.define(version: 2020_05_21_085346) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2020_05_21_084009) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
+    t.bigint "type_id", null: false
+    t.index ["type_id"], name: "index_events_on_type_id"
     t.index ["user_id"], name: "index_events_on_user_id"
   end
 
@@ -66,6 +68,10 @@ ActiveRecord::Schema.define(version: 2020_05_21_084009) do
     t.string "name"
   end
 
+  create_table "types", force: :cascade do |t|
+    t.string "name"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -85,6 +91,7 @@ ActiveRecord::Schema.define(version: 2020_05_21_084009) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "events", "types"
   add_foreign_key "events", "users"
   add_foreign_key "pets", "species"
   add_foreign_key "pets", "users"

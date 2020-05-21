@@ -35,7 +35,6 @@ end
 25.times{print"-"}
 puts
 
-
 ## Fake Pets for random users
 30.times do
 
@@ -47,9 +46,13 @@ end
 25.times{print"-"}
 puts
 
+## Event type table
+['park', 'cafe hangout', 'walk', 'home date'].each do |t|
+  Type.create(name: t)
+end
 
-## Generate fake events under random users
-20.times do
+## Generate fake events under random users (park events)
+10.times do
     user = User.find(rand(User.first.id..User.last.id))
 
     # Starts on a random date/time 28 days before or after today
@@ -58,7 +61,37 @@ puts
     #End time is 1 to 4 hours after start time.
     #Event is named after user. E.g. "chelsea's event"
 
-    event = Event.create(user_id: user.id, title: "#{user.username}'s event", description: Faker::Lorem.paragraph, capacity: rand(2..20), location: Faker::Address.street_address, start_time: start_time, end_time: start_time + rand(1..4).hours, min_pets: 0)
+    event = Event.create(user_id: user.id, title: "#{user.username}'s event", description: Faker::Lorem.paragraph, capacity: rand(2..20), location: Faker::Address.street_address, start_time: start_time, end_time: start_time + rand(1..4).hours, min_pets: 0, type_id: 1)
+
+    puts "Created #{event.title}"
+end
+
+## Generate fake events under random users (cafe events)
+10.times do
+    user = User.find(rand(User.first.id..User.last.id))
+
+    # Starts on a random date/time 28 days before or after today
+    start_time = DateTime.now + rand(-28..28) + rand(-24..24).hours
+
+    #End time is 1 to 4 hours after start time.
+    #Event is named after user. E.g. "chelsea's event"
+
+    event = Event.create(user_id: user.id, title: "#{user.username}'s event", description: Faker::Lorem.paragraph, capacity: rand(2..20), location: Faker::Address.street_address, start_time: start_time, end_time: start_time + rand(1..4).hours, min_pets: 0, type_id: 2)
+
+    puts "Created #{event.title}"
+end
+
+## Generate fake events under random users (walk events)
+10.times do
+    user = User.find(rand(User.first.id..User.last.id))
+
+    # Starts on a random date/time 28 days before or after today
+    start_time = DateTime.now + rand(-28..28) + rand(-24..24).hours
+
+    #End time is 1 to 4 hours after start time.
+    #Event is named after user. E.g. "chelsea's event"
+
+    event = Event.create(user_id: user.id, title: "#{user.username}'s event", description: Faker::Lorem.paragraph, capacity: rand(2..20), location: Faker::Address.street_address, start_time: start_time, end_time: start_time + rand(1..4).hours, min_pets: 0, type_id: 3)
 
     puts "Created #{event.title}"
 end
@@ -66,9 +99,8 @@ end
 25.times{print"-"}
 puts
 
-
 ## Link random pets to random events.
-50.times do
+100.times do
     event = Event.find(rand(Event.first.id..Event.last.id))
     pet = Pet.find(rand(Pet.first.id..Pet.last.id))
     event.pets << pet
