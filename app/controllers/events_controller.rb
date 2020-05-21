@@ -25,6 +25,29 @@ class EventsController < ApplicationController
   def show
   end
 
+  def rsvp
+    @event = Event.find(params[:id])
+    @pet_ids = event_params[:pet_ids].reject!(&:blank?)
+    
+    #Get unselected pets.
+    unselected_pets = current_user.pets.select{ | pet | !@pet_ids.include?(pet.id.to_s)}
+
+    # For each pet unselected, uninvite them if already rsvped.
+    unselected_pets.each do |pet|
+      @event.pets.delete(pet)
+    end
+
+    # For each pet selected, add them to event if not already rsvped.
+    @pet_ids.each do |id|
+      pet = Pet.find(id)
+      if !pet.is_rsvped(@event)
+        @event.pets << pet
+      end
+    end
+
+    redirect_to @event
+  end
+
   # GET /events/new
   def new
     @event = Event.new

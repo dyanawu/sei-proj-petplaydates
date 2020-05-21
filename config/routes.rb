@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   # before_action :authenticate_user!
   root to: "events#index"
   resources :events
+  post '/events/:id/rsvp', to: 'events#rsvp', as: "rsvp"
+
   resources :pets
 
   get '/api' => 'search#getapi', as: 'get_api'
