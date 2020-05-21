@@ -1,6 +1,71 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #ff6600;
+}
+
+.container{
+  background: white;
+  height: 1000px;
+}
+
+.form-header {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 30px;
+  color: #ff6600;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.form-label {
+  font-size: 15px;
+  margin-bottom: 2px;
+  margin-top: 5px;
+  font-weight: bold;
+  color: #2d2d2d;
+}
+
+.form-control, .input-group {
+  margin-bottom: 5px;
+}
+
+#location-select {
+  margin-top: 10px;
+}
+
+#google-button {
+  color: #315cfd;
+  border: solid 1px #CED4DA;
+}
+
+.btn-primary {
+  margin-top: 15px;
+}
+
+.error-msg {
+  margin-bottom: 5px;
+  color: red;
+}
+
+.error-msg-list {
+  color: red;
+  margin-bottom: 2px;
+}
+
+.error-header {
+  font-size: 20;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  color: red;
+}
+
+#type-select {
+  text-transform: capitalize;
+}
+
 option[value=""][disabled] {
   display: none;
 }

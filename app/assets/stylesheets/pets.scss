@@ -3,31 +3,30 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 #species-options {
-      input {
-      	visibility: hidden;
-      }
+  input {
+    visibility: hidden;
+  }
 
-      label {
-            cursor: pointer;
-            width: 300px;
-            height: 300px;
-            padding: 30px;
-            border-radius: 30px;
-      }
+  label {
+    cursor: pointer;
+    width: 300px;
+    height: 300px;
+    padding: 30px;
+    border-radius: 30px;
+  }
 
+  label img {
+    width: 100%;
+  }
 
-      label img {
-            width: 100%
-      }
+  input:checked + label {
+    border: 5px solid white;
+    background-color: #ffa767;
+  }
 
-      input:checked+label {
-            border: 5px solid white;
-            background-color: grey;
-      }
+  label:hover {
+    background-color: #ffa767;
+  }
 
-      label:hover{
-            background-color: grey;
-      }
-
+  margin-bottom: 5px;
 }
-

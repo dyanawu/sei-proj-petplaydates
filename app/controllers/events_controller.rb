@@ -10,16 +10,6 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
-  def getapi
-    uri = URI('https://maps.googleapis.com/maps/api/place/findplacefromtext/json')
-    apiKey = "AIzaSyAmlsvjUNhN1BUTmvSq9SKhq8b0r4qXwAc"
-    
-    params = { :input => inputText, :inputtype => textquery, :fields => formatted_address, :key => apiKey }
-    uri.query = URI.encode_www_form(params)
-    res = Net::HTTP.get_response(uri)
-    render json: res.body if res.is_a?(Net::HTTPSuccess)
-  end
-
   # GET /events/1
   # GET /events/1.json
   def show
@@ -51,6 +41,7 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    @types = Type.all
   end
 
   # GET /events/1/edit
@@ -60,6 +51,7 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
+    @types = Type.all
     @event = parse_event_to_local_time(Event.new(event_params))
     @event.user = current_user
 
@@ -116,6 +108,6 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:title, :description, :capacity, :location, :start_time, :end_time, :min_pets, :pet_ids => [])
+      params.require(:event).permit(:title, :description, :capacity, :location, :start_time, :end_time, :min_pets, :type_id, :pet_ids => [])
     end
 end
