@@ -1,6 +1,6 @@
 console.log("new event script!");
 
-//URL based needs to change after deploy
+//URL base needs to change after deploy
 let URLBase = "https://pet-playdates.herokuapp.com/";
 let apiURL = URLBase + "/api";
 
