@@ -1,0 +1,24 @@
+Hello <%= @host.username.upcase %>!
+
+We are pleased to notify you that there is a new RSVP for <%= @event.title.upcase %> - 
+
+Pet name: <%= @pet.name.upcase %>
+<% if @pet.gender == "m" %>
+<% gender = "Male" %>
+<% else %>
+<% gender = "Female" %>
+<% end %>
+Pet gender: <%= gender.upcase %>
+<% if @pet.species == 1 %>
+<% species = "Dog"%>
+<% else %>
+<% species = "Cat" %>
+<% end %>
+Pet species: <%= species.upcase %>
+
+To get in touch with <%= @pet.name.upcase %>'S owner, you may contact <%= @petowner.username.upcase %> at <%= @petowner.email %>.
+
+Wishing you a delightful pawdate! 
+
+Cheers, 
+Pawdate Team

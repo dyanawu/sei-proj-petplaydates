@@ -33,13 +33,19 @@ class EventsController < ApplicationController
     # For each pet unselected, uninvite them if already rsvped.
     unselected_pets.each do |pet|
       @event.pets.delete(pet)
+      
     end
 
     # For each pet selected, add them to event if not already rsvped.
     @pet_ids.each do |id|
       pet = Pet.find(id)
       if !pet.is_rsvped(@event)
+        
         @event.pets << pet
+
+        #Send email to event host to notify of rsvp
+        @host = User.find(@event.user_id)
+        UserMailer.with(host: @host, pet: pet, event: @event).rsvp_to_host.deliver_later
       end
     end
 
