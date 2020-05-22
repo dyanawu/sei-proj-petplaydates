@@ -12,6 +12,9 @@ class EventsController < ApplicationController
 
   def homepage
     @events = Event.order(id: :desc)
+    @events_today = Event.today
+    @events_upcoming = Event.upcoming
+    @events_recent = Event.recent
   end
 
   # GET /events/1
@@ -23,7 +26,7 @@ class EventsController < ApplicationController
   def rsvp
     @event = Event.find(params[:id])
     @pet_ids = event_params[:pet_ids].reject!(&:blank?)
-    
+
     #Get unselected pets.
     unselected_pets = current_user.pets.select{ | pet | !@pet_ids.include?(pet.id.to_s)}
 

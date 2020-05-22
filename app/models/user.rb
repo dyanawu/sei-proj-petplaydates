@@ -36,7 +36,6 @@ class User < ApplicationRecord
   end
 
   # returns events that the user's pets are attending
-  # might return duplicates if more than one pet attending the same event
   def events_attending
     Event.joins(:pets).where(pets: {user_id: self.id}).order(:start_time).distinct
   end
