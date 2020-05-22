@@ -32,6 +32,14 @@ require 'action_view'
     time_ago_in_words(self.end_time)
   end
 
+  def start_time_str
+    self.start_time.getlocal.strftime("%d %B %Y, %H:%M")
+  end
+
+  def end_time_str
+    self.end_time.getlocal.strftime("%d %B %Y, %H:%M")
+  end
+
   def self.today
     self.where(
       start_time: Time.now..Time.now.end_of_day)
