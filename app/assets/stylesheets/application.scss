@@ -14,6 +14,130 @@
 
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+@import "colors";
 @import "pets";
 @import "events";
+@import "navbar";
+@import "buttons";
 
+
+button:focus {
+	outline: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	color: $charcoal;
+	padding-top: 76px;
+}
+
+.sticky-offset {
+	top: 76px;
+}
+
+a {
+	color: $peach;
+}
+
+a:hover {
+	color: $red;
+}
+
+hr {
+	border-color: grey;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+.container-fluid {
+	padding: 3% 12%;
+	background-color: white;
+}
+
+#welcome-header {
+	width: 100vw;
+	height: 95vh;
+	padding: 5vh 10% 0 10%;
+	background-color: $orange;
+
+	.header {
+		position: relative;
+		top: 30%;
+		margin-bottom: 1rem;
+	}
+
+	.header-text {
+		margin-bottom: 3rem;
+	}
+
+	h1 {
+		color: white;
+		font-size: 6rem;
+		font-weight: bolder;
+		letter-spacing: 1px;
+	}
+
+	p {
+		font-size: 2rem;
+		letter-spacing: 2px;
+	}
+
+	#animals {
+		top: 100px;
+	}
+
+	#dog {
+		position: absolute;
+		left: 10%;
+		z-index: 1;
+
+		img {
+			width: 80%;
+		}
+	}
+
+	#cat {
+		position: absolute;
+		left: 40%;
+
+		img {
+			width: 80%;
+		}
+	}
+
+}
+
+.highlight {
+	display: inline;
+	letter-spacing: 2px;
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 60%, #FFD0AE 50%);
+}
+
+.card-flag {
+	font-size: 0.8rem;
+	position: absolute;
+	top: 1rem;
+	left: 0;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	padding: 0.5rem 1rem 0.5rem 1rem;
+	box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+	text-align: right;
+	font-weight: bold;
+}
+
+#events {
+	padding-top: 76px;
+}

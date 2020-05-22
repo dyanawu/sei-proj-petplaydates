@@ -1,0 +1,21 @@
+@import "colors";
+
+.btn-orange {
+	background-color: $orange;
+	border-color: rgba(255, 166, 0, 0.904);
+	color: white;
+	border-radius: 20px;
+	padding: 6px 30px;
+	box-shadow: 0 7px 0 0 $peach;
+	position: relative;
+    transition-duration: 0s;
+    text-transform: uppercase;
+    transition: background-color 0.5s ease;
+}
+
+.btn-orange:hover {
+	background-color: $peach;
+	color: whitesmoke;
+	top: 7px;
+	box-shadow: none;
+}
