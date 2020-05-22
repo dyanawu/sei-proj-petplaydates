@@ -27,6 +27,22 @@ require 'action_view'
     time_ago_in_words(self.end_time)
   end
 
+  def self.today
+    self.where(
+      start_time: Time.now..Time.now.end_of_day)
+      .order(start_time: :asc)
+  end
+
+  def self.upcoming
+    self.where(
+      start_time: Time.now.beginning_of_day + 1.day..Time.now.beginning_of_day + 8.days)
+      .order(start_time: :asc)
+  end
+
+  def self.recent
+    self.order(id: :desc).limit(15)
+  end
+
   validate :end_after_start
   validates :start_time, :end_time, :presence => true
 

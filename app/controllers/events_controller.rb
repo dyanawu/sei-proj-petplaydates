@@ -12,12 +12,9 @@ class EventsController < ApplicationController
 
   def homepage
     @events = Event.order(id: :desc)
-    @events_today = Event.where(start_time: Time.now.beginning_of_day..Time.now.end_of_day)
-                      .order(start_time: :asc)
-    @events_upcoming = Event.where(
-      start_time: Time.now.beginning_of_day + 1.day..Time.now.beginning_of_day + 8.days)
-                         .order(start_time: :asc)
-    @events_recent = Event.order(id: :desc).limit(15)
+    @events_today = Event.today
+    @events_upcoming = Event.upcoming
+    @events_recent = Event.recent
   end
 
   # GET /events/1
