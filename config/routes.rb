@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   # uncomment below when we're ready
   # before_action :authenticate_user!
-  root to: "events#index"
+  root to: "events#homepage"
   resources :events
   post '/events/:id/rsvp', to: 'events#rsvp', as: "rsvp"
 
