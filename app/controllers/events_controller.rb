@@ -18,7 +18,6 @@ class EventsController < ApplicationController
       start_time: Time.now.beginning_of_day + 1.day..Time.now.beginning_of_day + 8.days)
                          .order(start_time: :asc)
     @events_recent = Event.order(id: :desc).limit(15)
-
   end
 
   # GET /events/1
@@ -30,7 +29,7 @@ class EventsController < ApplicationController
   def rsvp
     @event = Event.find(params[:id])
     @pet_ids = event_params[:pet_ids].reject!(&:blank?)
-    
+
     #Get unselected pets.
     unselected_pets = current_user.pets.select{ | pet | !@pet_ids.include?(pet.id.to_s)}
 
