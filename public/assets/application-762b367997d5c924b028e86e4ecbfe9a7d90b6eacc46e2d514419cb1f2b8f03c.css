@@ -11856,6 +11856,11 @@ h3 {
   }
 }
 
+/* line 5, app/assets/stylesheets/pets.scss */
+#species-options {
+  margin-bottom: 5px;
+}
+
 /* line 6, app/assets/stylesheets/pets.scss */
 #species-options input {
   visibility: hidden;
@@ -11870,23 +11875,100 @@ h3 {
   border-radius: 30px;
 }
 
-/* line 19, app/assets/stylesheets/pets.scss */
+/* line 18, app/assets/stylesheets/pets.scss */
 #species-options label img {
   width: 100%;
 }
 
-/* line 23, app/assets/stylesheets/pets.scss */
+/* line 22, app/assets/stylesheets/pets.scss */
 #species-options input:checked + label {
   border: 5px solid white;
-  background-color: grey;
+  background-color: #ffa767;
 }
 
-/* line 28, app/assets/stylesheets/pets.scss */
+/* line 27, app/assets/stylesheets/pets.scss */
 #species-options label:hover {
-  background-color: grey;
+  background-color: #ffa767;
 }
 
 /* line 4, app/assets/stylesheets/events.scss */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: #ff6600;
+}
+
+/* line 9, app/assets/stylesheets/events.scss */
+.container {
+  background: white;
+  height: 1000px;
+}
+
+/* line 14, app/assets/stylesheets/events.scss */
+.form-header {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 30px;
+  color: #ff6600;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* line 23, app/assets/stylesheets/events.scss */
+.form-label {
+  font-size: 15px;
+  margin-bottom: 2px;
+  margin-top: 5px;
+  font-weight: bold;
+  color: #2d2d2d;
+}
+
+/* line 31, app/assets/stylesheets/events.scss */
+.form-control, .input-group {
+  margin-bottom: 5px;
+}
+
+/* line 35, app/assets/stylesheets/events.scss */
+#location-select {
+  margin-top: 10px;
+}
+
+/* line 39, app/assets/stylesheets/events.scss */
+#google-button {
+  color: #315cfd;
+  border: solid 1px #CED4DA;
+}
+
+/* line 44, app/assets/stylesheets/events.scss */
+.btn-primary {
+  margin-top: 15px;
+}
+
+/* line 48, app/assets/stylesheets/events.scss */
+.error-msg {
+  margin-bottom: 5px;
+  color: red;
+}
+
+/* line 53, app/assets/stylesheets/events.scss */
+.error-msg-list {
+  color: red;
+  margin-bottom: 2px;
+}
+
+/* line 58, app/assets/stylesheets/events.scss */
+.error-header {
+  font-size: 20;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  color: red;
+}
+
+/* line 65, app/assets/stylesheets/events.scss */
+#type-select {
+  text-transform: capitalize;
+}
+
+/* line 69, app/assets/stylesheets/events.scss */
 option[value=""][disabled] {
   display: none;
 }

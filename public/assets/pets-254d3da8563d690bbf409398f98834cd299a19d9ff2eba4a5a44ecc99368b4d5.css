@@ -1,3 +1,8 @@
+/* line 5, app/assets/stylesheets/pets.scss */
+#species-options {
+  margin-bottom: 5px;
+}
+
 /* line 6, app/assets/stylesheets/pets.scss */
 #species-options input {
   visibility: hidden;
@@ -12,18 +17,18 @@
   border-radius: 30px;
 }
 
-/* line 19, app/assets/stylesheets/pets.scss */
+/* line 18, app/assets/stylesheets/pets.scss */
 #species-options label img {
   width: 100%;
 }
 
-/* line 23, app/assets/stylesheets/pets.scss */
+/* line 22, app/assets/stylesheets/pets.scss */
 #species-options input:checked + label {
   border: 5px solid white;
-  background-color: grey;
+  background-color: #ffa767;
 }
 
-/* line 28, app/assets/stylesheets/pets.scss */
+/* line 27, app/assets/stylesheets/pets.scss */
 #species-options label:hover {
-  background-color: grey;
+  background-color: #ffa767;
 }
