@@ -55,7 +55,7 @@
   <div id="location-select">
   </div>
   <div class="form-label">Select Event Type</div>
-  <%= form.collection_select :type_id, @types, :id, :name,  {}, {:class => 'form-control', :id => 'type-select', :required => true %>
+  <%= form.collection_select :type_id, @types, :id, :name,  {}, {:class => 'form-control', :id => 'type-select', :required => true} %>
   <div class="field" hidden>
     <%= form.label :min_pets, "Minimum Pet Participation", class:"form-label" %>
     <%= form.number_field :min_pets, class:"form-control", value:"0", :required => true %>
