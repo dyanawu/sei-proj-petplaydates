@@ -1,0 +1,23 @@
+@import 'colors';
+
+
+.nav-icon {
+	max-height: 60px;
+	margin-right: 0.5rem;
+}
+
+.navbar-brand a {
+    margin-right: 2rem;
+}
+
+.navlink a:hover{
+    color: $orange;
+}
+
+.nav-link {
+    text-transform: uppercase;
+}
+
+nav button a {
+    font-size: 0.8rem;
+}
