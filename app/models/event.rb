@@ -20,7 +20,12 @@ require 'action_view'
   end
 
   def time_left
-    time_ago_in_words(self.start_time)
+    start_time = self.start_time
+    if start_time < Time.now
+      time_ago_in_words(start_time) + " ago"
+    else
+      "in " + time_ago_in_words(start_time)
+    end
   end
 
   def ended_since
