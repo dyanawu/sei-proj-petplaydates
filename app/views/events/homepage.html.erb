@@ -1,0 +1,81 @@
+
+
+<div id="welcome-header" class="row">
+
+<div class="col-md-6 text-white">
+
+  <div class="header">
+
+  <div class="header-text">
+      <h1>PAWDATES</h1>
+    <p class="sub-header">forming 
+    <span class="text-red">pawsitive</span>
+     connections.</p>
+  </div>
+      <a href="#events"><button class="btn btn-lg btn-dark">Find events now →</button>
+</a>
+
+  </div>
+
+  </div>
+
+  <div class="col-md-6">
+  <div id="animals">
+    <div id="dog">
+    <%= image_tag "index/dog-header.png"%>
+    </div>
+    <div id="cat">
+    <%= image_tag "index/cat-header1.png"%>
+    </div>
+  </div>  
+  </div>
+
+
+
+
+</div>
+
+
+
+<div id="events" class="container-fluid">
+
+<%= render :partial => 'event_header', locals: { header: "Happening today" } %>
+
+
+<div class="my-5 owl-carousel owl-theme">
+
+<% @events.each do |event| %>
+<div class="item">
+<%= render :partial => 'event_card', locals: { event: event } %>
+
+</div>
+<% end %>
+</div>
+
+
+<%= render :partial => 'event_header', locals: { header: "Upcoming Events" } %>
+
+
+
+<div class="my-5 owl-carousel owl-theme">
+<% @events.each do |event| %>
+<div class="item">
+<%= render :partial => 'event_card', locals: { event: event } %>
+</div>
+<% end %>
+</div>
+
+<%= render :partial => 'event_header', locals: { header: "Recently Added" } %>
+
+
+<div class="my-5 owl-carousel owl-theme">
+
+<% @events.each do |event| %>
+<div class="item">
+<%= render :partial => 'event_card', locals: { event: event } %>
+</div>
+<% end %>
+</div>
+
+
+</div>
