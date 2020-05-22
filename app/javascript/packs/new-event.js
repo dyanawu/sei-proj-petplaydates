@@ -36,9 +36,11 @@ function findAddress() {
         let selectDiv = document.getElementById("location-select");
         selectDiv.textContent = "";
         let select = document.createElement("select");
-        select.className = "custom-select";
+        select.classList.add("custom-select");
+        select.classList.add("form-control");
         let text = document.createElement("div");
-        text.textContent = "Select Location:";
+        text.textContent = "Select Location";
+        text.className = "form-label"
         selectDiv.appendChild(text);
         select.addEventListener("change", replaceInput);
 
@@ -65,6 +67,7 @@ function findAddress() {
         selectDiv.textContent = "";
         let messageP = document.createElement("p");
         messageP.className = "text-danger";
+        messageP.classList.add("error-msg");
         messageP.textContent = message;
         selectDiv.appendChild(messageP);
       }
