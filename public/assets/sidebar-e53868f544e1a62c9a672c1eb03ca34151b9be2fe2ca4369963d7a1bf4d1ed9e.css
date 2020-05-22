@@ -1,0 +1,75 @@
+/* line 1, app/assets/stylesheets/sidebar.scss */
+#sidebar-container {
+  min-height: 100vh;
+  background-color: #333;
+  padding: 0;
+}
+
+/* Sidebar sizes when expanded and expanded */
+/* line 8, app/assets/stylesheets/sidebar.scss */
+.sidebar-expanded {
+  width: 230px;
+}
+
+/* line 12, app/assets/stylesheets/sidebar.scss */
+.sidebar-collapsed {
+  width: 60px;
+}
+
+/* Menu item*/
+/* line 17, app/assets/stylesheets/sidebar.scss */
+#sidebar-container .list-group a {
+  height: 50px;
+  color: white;
+}
+
+/* Submenu item*/
+/* line 23, app/assets/stylesheets/sidebar.scss */
+#sidebar-container .list-group .sidebar-submenu a {
+  height: 45px;
+  padding-left: 30px;
+}
+
+/* line 28, app/assets/stylesheets/sidebar.scss */
+.sidebar-submenu {
+  font-size: 0.9rem;
+}
+
+/* Separators */
+/* line 33, app/assets/stylesheets/sidebar.scss */
+.sidebar-separator-title {
+  background-color: #333;
+  height: 35px;
+}
+
+/* line 38, app/assets/stylesheets/sidebar.scss */
+.sidebar-separator {
+  background-color: #333;
+  height: 25px;
+}
+
+/* line 43, app/assets/stylesheets/sidebar.scss */
+.logo-separator {
+  background-color: #333;
+  height: 60px;
+}
+
+/* Closed submenu icon */
+/* line 49, app/assets/stylesheets/sidebar.scss */
+#sidebar-container .list-group .list-group-item[aria-expanded="false"] .submenu-icon::after {
+  content: " \f0d7";
+  font-family: FontAwesome;
+  display: inline;
+  text-align: right;
+  padding-left: 10px;
+}
+
+/* Opened submenu icon */
+/* line 58, app/assets/stylesheets/sidebar.scss */
+#sidebar-container .list-group .list-group-item[aria-expanded="true"] .submenu-icon::after {
+  content: " \f0da";
+  font-family: FontAwesome;
+  display: inline;
+  text-align: right;
+  padding-left: 10px;
+}

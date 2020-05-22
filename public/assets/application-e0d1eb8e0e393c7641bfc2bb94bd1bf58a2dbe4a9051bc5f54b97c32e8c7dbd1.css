@@ -11856,6 +11856,56 @@ h3 {
   }
 }
 
+/* line 8, app/assets/stylesheets/colors.scss */
+.text-orange {
+  color: #ff8800;
+}
+
+/* line 12, app/assets/stylesheets/colors.scss */
+.bg-orange {
+  background-color: #ff8800;
+}
+
+/* line 16, app/assets/stylesheets/colors.scss */
+.text-blue {
+  color: #315cfd;
+}
+
+/* line 20, app/assets/stylesheets/colors.scss */
+.bg-blue {
+  background-color: #315cfd;
+}
+
+/* line 24, app/assets/stylesheets/colors.scss */
+.text-peach {
+  color: #ff6600;
+}
+
+/* line 28, app/assets/stylesheets/colors.scss */
+.bg-peach {
+  background-color: #ff6600;
+}
+
+/* line 32, app/assets/stylesheets/colors.scss */
+.text-red {
+  color: #de3f00;
+}
+
+/* line 36, app/assets/stylesheets/colors.scss */
+.text-burnt {
+  color: #ca6c13;
+}
+
+/* line 41, app/assets/stylesheets/colors.scss */
+.bg-burnt {
+  background-color: #ca6c13;
+}
+
+/* line 46, app/assets/stylesheets/colors.scss */
+.bg-red {
+  background-color: #de3f00;
+}
+
 /* line 5, app/assets/stylesheets/pets.scss */
 #species-options {
   margin-bottom: 5px;
@@ -11891,19 +11941,7 @@ h3 {
   background-color: #ffa767;
 }
 
-/* line 4, app/assets/stylesheets/events.scss */
-body {
-  font-family: 'Open Sans', sans-serif;
-  background: #ff6600;
-}
-
-/* line 9, app/assets/stylesheets/events.scss */
-.container {
-  background: white;
-  height: 1000px;
-}
-
-/* line 14, app/assets/stylesheets/events.scss */
+/* line 5, app/assets/stylesheets/events.scss */
 .form-header {
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -11913,7 +11951,7 @@ body {
   margin-bottom: 10px;
 }
 
-/* line 23, app/assets/stylesheets/events.scss */
+/* line 14, app/assets/stylesheets/events.scss */
 .form-label {
   font-size: 15px;
   margin-bottom: 2px;
@@ -11922,40 +11960,40 @@ body {
   color: #2d2d2d;
 }
 
-/* line 31, app/assets/stylesheets/events.scss */
+/* line 22, app/assets/stylesheets/events.scss */
 .form-control, .input-group {
   margin-bottom: 5px;
 }
 
-/* line 35, app/assets/stylesheets/events.scss */
+/* line 26, app/assets/stylesheets/events.scss */
 #location-select {
   margin-top: 10px;
 }
 
-/* line 39, app/assets/stylesheets/events.scss */
+/* line 30, app/assets/stylesheets/events.scss */
 #google-button {
   color: #315cfd;
   border: solid 1px #CED4DA;
 }
 
-/* line 44, app/assets/stylesheets/events.scss */
+/* line 35, app/assets/stylesheets/events.scss */
 .btn-primary {
   margin-top: 15px;
 }
 
-/* line 48, app/assets/stylesheets/events.scss */
+/* line 39, app/assets/stylesheets/events.scss */
 .error-msg {
   margin-bottom: 5px;
   color: red;
 }
 
-/* line 53, app/assets/stylesheets/events.scss */
+/* line 44, app/assets/stylesheets/events.scss */
 .error-msg-list {
   color: red;
   margin-bottom: 2px;
 }
 
-/* line 58, app/assets/stylesheets/events.scss */
+/* line 49, app/assets/stylesheets/events.scss */
 .error-header {
   font-size: 20;
   text-transform: uppercase;
@@ -11963,12 +12001,302 @@ body {
   color: red;
 }
 
-/* line 65, app/assets/stylesheets/events.scss */
+/* line 56, app/assets/stylesheets/events.scss */
 #type-select {
   text-transform: capitalize;
 }
 
-/* line 69, app/assets/stylesheets/events.scss */
+/* line 60, app/assets/stylesheets/events.scss */
 option[value=""][disabled] {
   display: none;
+}
+
+/* line 8, app/assets/stylesheets/colors.scss */
+.text-orange {
+  color: #ff8800;
+}
+
+/* line 12, app/assets/stylesheets/colors.scss */
+.bg-orange {
+  background-color: #ff8800;
+}
+
+/* line 16, app/assets/stylesheets/colors.scss */
+.text-blue {
+  color: #315cfd;
+}
+
+/* line 20, app/assets/stylesheets/colors.scss */
+.bg-blue {
+  background-color: #315cfd;
+}
+
+/* line 24, app/assets/stylesheets/colors.scss */
+.text-peach {
+  color: #ff6600;
+}
+
+/* line 28, app/assets/stylesheets/colors.scss */
+.bg-peach {
+  background-color: #ff6600;
+}
+
+/* line 32, app/assets/stylesheets/colors.scss */
+.text-red {
+  color: #de3f00;
+}
+
+/* line 36, app/assets/stylesheets/colors.scss */
+.text-burnt {
+  color: #ca6c13;
+}
+
+/* line 41, app/assets/stylesheets/colors.scss */
+.bg-burnt {
+  background-color: #ca6c13;
+}
+
+/* line 46, app/assets/stylesheets/colors.scss */
+.bg-red {
+  background-color: #de3f00;
+}
+
+/* line 4, app/assets/stylesheets/navbar.scss */
+.nav-icon {
+  max-height: 60px;
+  margin-right: 0.5rem;
+}
+
+/* line 9, app/assets/stylesheets/navbar.scss */
+.navbar-brand a {
+  margin-right: 2rem;
+}
+
+/* line 13, app/assets/stylesheets/navbar.scss */
+.navlink a:hover {
+  color: #ff8800;
+}
+
+/* line 17, app/assets/stylesheets/navbar.scss */
+.nav-link {
+  text-transform: uppercase;
+}
+
+/* line 21, app/assets/stylesheets/navbar.scss */
+nav button a {
+  font-size: 0.8rem;
+}
+
+/* line 8, app/assets/stylesheets/colors.scss */
+.text-orange {
+  color: #ff8800;
+}
+
+/* line 12, app/assets/stylesheets/colors.scss */
+.bg-orange {
+  background-color: #ff8800;
+}
+
+/* line 16, app/assets/stylesheets/colors.scss */
+.text-blue {
+  color: #315cfd;
+}
+
+/* line 20, app/assets/stylesheets/colors.scss */
+.bg-blue {
+  background-color: #315cfd;
+}
+
+/* line 24, app/assets/stylesheets/colors.scss */
+.text-peach {
+  color: #ff6600;
+}
+
+/* line 28, app/assets/stylesheets/colors.scss */
+.bg-peach {
+  background-color: #ff6600;
+}
+
+/* line 32, app/assets/stylesheets/colors.scss */
+.text-red {
+  color: #de3f00;
+}
+
+/* line 36, app/assets/stylesheets/colors.scss */
+.text-burnt {
+  color: #ca6c13;
+}
+
+/* line 41, app/assets/stylesheets/colors.scss */
+.bg-burnt {
+  background-color: #ca6c13;
+}
+
+/* line 46, app/assets/stylesheets/colors.scss */
+.bg-red {
+  background-color: #de3f00;
+}
+
+/* line 3, app/assets/stylesheets/buttons.scss */
+.btn-orange {
+  background-color: #ff8800;
+  border-color: rgba(255, 166, 0, 0.904);
+  color: white;
+  border-radius: 20px;
+  padding: 6px 30px;
+  box-shadow: 0 7px 0 0 #ff6600;
+  position: relative;
+  transition-duration: 0s;
+  text-transform: uppercase;
+  transition: background-color 0.5s ease;
+}
+
+/* line 16, app/assets/stylesheets/buttons.scss */
+.btn-orange:hover {
+  background-color: #ff6600;
+  color: whitesmoke;
+  top: 7px;
+  box-shadow: none;
+}
+
+/* line 24, app/assets/stylesheets/application.scss */
+button:focus {
+  outline: 0;
+}
+
+/* line 28, app/assets/stylesheets/application.scss */
+html {
+  scroll-behavior: smooth;
+}
+
+/* line 32, app/assets/stylesheets/application.scss */
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #2d2d2d;
+  padding-top: 76px;
+}
+
+/* line 38, app/assets/stylesheets/application.scss */
+.sticky-offset {
+  top: 76px;
+}
+
+/* line 42, app/assets/stylesheets/application.scss */
+a {
+  color: #ff6600;
+}
+
+/* line 46, app/assets/stylesheets/application.scss */
+a:hover {
+  color: #de3f00;
+}
+
+/* line 50, app/assets/stylesheets/application.scss */
+hr {
+  border-color: grey;
+}
+
+/* line 54, app/assets/stylesheets/application.scss */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* line 64, app/assets/stylesheets/application.scss */
+.container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
+  padding: 3% 12%;
+  background-color: white;
+}
+
+/* line 69, app/assets/stylesheets/application.scss */
+#welcome-header {
+  width: 100vw;
+  height: 95vh;
+  padding: 5vh 10% 0 10%;
+  background-color: #ff8800;
+}
+
+/* line 75, app/assets/stylesheets/application.scss */
+#welcome-header .header {
+  position: relative;
+  top: 30%;
+  margin-bottom: 1rem;
+}
+
+/* line 81, app/assets/stylesheets/application.scss */
+#welcome-header .header-text {
+  margin-bottom: 3rem;
+}
+
+/* line 85, app/assets/stylesheets/application.scss */
+#welcome-header h1 {
+  color: white;
+  font-size: 6rem;
+  font-weight: bolder;
+  letter-spacing: 1px;
+}
+
+/* line 92, app/assets/stylesheets/application.scss */
+#welcome-header p {
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+/* line 97, app/assets/stylesheets/application.scss */
+#welcome-header #animals {
+  top: 100px;
+}
+
+/* line 101, app/assets/stylesheets/application.scss */
+#welcome-header #dog {
+  position: absolute;
+  left: 10%;
+  z-index: 1;
+}
+
+/* line 106, app/assets/stylesheets/application.scss */
+#welcome-header #dog img {
+  width: 80%;
+}
+
+/* line 111, app/assets/stylesheets/application.scss */
+#welcome-header #cat {
+  position: absolute;
+  left: 40%;
+}
+
+/* line 115, app/assets/stylesheets/application.scss */
+#welcome-header #cat img {
+  width: 80%;
+}
+
+/* line 122, app/assets/stylesheets/application.scss */
+.highlight {
+  display: inline;
+  letter-spacing: 2px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 60%, #FFD0AE 50%);
+}
+
+/* line 128, app/assets/stylesheets/application.scss */
+.card-flag {
+  font-size: 0.8rem;
+  position: absolute;
+  top: 1rem;
+  left: 0;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: right;
+  font-weight: bold;
+}
+
+/* line 141, app/assets/stylesheets/application.scss */
+#events {
+  padding-top: 76px;
 }
