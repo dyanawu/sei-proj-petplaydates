@@ -10,10 +10,15 @@ class EventsController < ApplicationController
     @events = Event.all
   end
 
+  def homepage
+    @events = Event.order(id: :desc)
+  end
+
   # GET /events/1
   # GET /events/1.json
   def show
   end
+
 
   def rsvp
     @event = Event.find(params[:id])
