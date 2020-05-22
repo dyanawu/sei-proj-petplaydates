@@ -9,7 +9,6 @@
       </ul>
     </div>
   <% end %>
-
   <div id="species-options" class="text-center">
     <% Species.all.each do |species| %>
       <%= radio_button_tag("pet[species_id]", species.id) %>
