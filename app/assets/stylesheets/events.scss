@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com
 
+
+//Styles for new pet and new event form 
 .form-header {
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -59,4 +61,9 @@
 
 option[value=""][disabled] {
   display: none;
+}
+
+//Styles for event/:id route
+.joined-pet {
+  border-radius: 50%;
 }

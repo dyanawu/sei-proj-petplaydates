@@ -41,7 +41,7 @@ require 'action_view'
   end
 
   def start_date_str
-    self.start_date.getlocal.strftime("%d %B %Y")
+    self.start_time.getlocal.strftime("%d %B %Y")
   end
 
   def start_time_str
@@ -49,7 +49,7 @@ require 'action_view'
   end
 
   def end_date_str
-    self.end_date.getlocal.strftime("%d %B %Y")
+    self.end_time.getlocal.strftime("%d %B %Y")
   end
 
   def end_time_str

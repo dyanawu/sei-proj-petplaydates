@@ -2,7 +2,7 @@
     <% if event.status=="past" %>
     <div class="card-flag bg-danger text-white">ended <%=event.ended_since %> ago</div>
     <% else %>
-    <div class="card-flag bg-dark text-white">in <%=event.time_left %></div>
+    <div class="card-flag bg-dark text-white"><%=event.time_left %></div>
     <%end%>
     <img class="card-img-top" src="https://picsum.photos/300" alt="Card image cap">
     <div class="card-body">
