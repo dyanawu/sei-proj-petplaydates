@@ -1,0 +1,95 @@
+/* line 11, app/assets/stylesheets/colors.scss */
+.text-test {
+  color: #4a5c63;
+}
+
+/* line 15, app/assets/stylesheets/colors.scss */
+.text-orange {
+  color: #ff8800;
+}
+
+/* line 19, app/assets/stylesheets/colors.scss */
+.bg-orange {
+  background-color: #ff8800;
+}
+
+/* line 23, app/assets/stylesheets/colors.scss */
+.text-blue {
+  color: #315cfd;
+}
+
+/* line 27, app/assets/stylesheets/colors.scss */
+.bg-blue {
+  background-color: #315cfd;
+}
+
+/* line 31, app/assets/stylesheets/colors.scss */
+.text-peach {
+  color: #ff6600;
+}
+
+/* line 35, app/assets/stylesheets/colors.scss */
+.bg-peach {
+  background-color: #ff6600;
+}
+
+/* line 39, app/assets/stylesheets/colors.scss */
+.text-red {
+  color: #de3f00;
+}
+
+/* line 43, app/assets/stylesheets/colors.scss */
+.text-burnt {
+  color: #ca6c13;
+}
+
+/* line 48, app/assets/stylesheets/colors.scss */
+.bg-burnt {
+  background-color: #ca6c13;
+}
+
+/* line 53, app/assets/stylesheets/colors.scss */
+.bg-red {
+  background-color: #de3f00;
+}
+
+/* line 57, app/assets/stylesheets/colors.scss */
+.bg-cream {
+  background-color: #FFD0AE;
+}
+
+/* line 3, app/assets/stylesheets/buttons.scss */
+.btn-orange {
+  background-color: #ff8800;
+  border-color: rgba(255, 166, 0, 0.904);
+  color: white;
+  border-radius: 20px;
+  padding: 6px 30px;
+  box-shadow: 0 7px 0 0 #ff6600;
+  position: relative;
+  transition-duration: 0s;
+  text-transform: uppercase;
+  transition: background-color 0.5s ease;
+}
+
+/* line 16, app/assets/stylesheets/buttons.scss */
+.btn-orange:hover {
+  background-color: #ff6600;
+  color: whitesmoke;
+  top: 7px;
+  box-shadow: none;
+}
+
+/* line 23, app/assets/stylesheets/buttons.scss */
+.add-btn {
+  color: green;
+  font-size: 2.3rem;
+  transition-duration: 0.2s;
+  cursor: pointer;
+}
+
+/* line 30, app/assets/stylesheets/buttons.scss */
+.add-btn:hover {
+  color: lightgreen;
+  cursor: pointer;
+}

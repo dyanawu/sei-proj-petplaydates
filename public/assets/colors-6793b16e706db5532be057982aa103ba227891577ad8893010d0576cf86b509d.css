@@ -1,0 +1,59 @@
+/* line 11, app/assets/stylesheets/colors.scss */
+.text-test {
+  color: #4a5c63;
+}
+
+/* line 15, app/assets/stylesheets/colors.scss */
+.text-orange {
+  color: #ff8800;
+}
+
+/* line 19, app/assets/stylesheets/colors.scss */
+.bg-orange {
+  background-color: #ff8800;
+}
+
+/* line 23, app/assets/stylesheets/colors.scss */
+.text-blue {
+  color: #315cfd;
+}
+
+/* line 27, app/assets/stylesheets/colors.scss */
+.bg-blue {
+  background-color: #315cfd;
+}
+
+/* line 31, app/assets/stylesheets/colors.scss */
+.text-peach {
+  color: #ff6600;
+}
+
+/* line 35, app/assets/stylesheets/colors.scss */
+.bg-peach {
+  background-color: #ff6600;
+}
+
+/* line 39, app/assets/stylesheets/colors.scss */
+.text-red {
+  color: #de3f00;
+}
+
+/* line 43, app/assets/stylesheets/colors.scss */
+.text-burnt {
+  color: #ca6c13;
+}
+
+/* line 48, app/assets/stylesheets/colors.scss */
+.bg-burnt {
+  background-color: #ca6c13;
+}
+
+/* line 53, app/assets/stylesheets/colors.scss */
+.bg-red {
+  background-color: #de3f00;
+}
+
+/* line 57, app/assets/stylesheets/colors.scss */
+.bg-cream {
+  background-color: #FFD0AE;
+}
