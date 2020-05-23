@@ -1,0 +1,49 @@
+<div class="page-header bg-dark">
+
+  <div class="page-header-text text-white font-weight-bold">
+  Your activities at a glance.
+  </div>
+</div>
+
+  <div class="container-fluid padding-main">
+  
+    <h2 class="d-inline highlight">Your Pets</h2>
+    <%= render :partial => '/components/add_btn', locals: { link: new_pet_path} %>
+
+    <% if @pets.count!=0 %>
+    
+    <div class="row my-5">
+        <% @pets.each do |pet|%>
+        <div class="col-lg-4 col-md-6 mb-3">
+            <%= render :partial => '/pets/user_pet_card', locals: { pet: pet} %>
+        </div>
+    <% end %>  
+    </div>
+
+    <% else %>
+
+    <p class="my-5">You do not have any pets added yet.</p>
+
+    <%end%>
+
+
+    
+        <h2 class="d-inline highlight">Your Events</h2>
+            <%= render :partial => '/components/add_btn', locals: { link: new_event_path} %>
+    <% if @hosting.count!=0 || @attending.count!=0 %>
+
+            <div class="row my-5">
+            <div class="card-deck">
+                        <% @hosting.each do |event|%>
+                            <%= render :partial => '/events/user_event_card', locals: { event: event} %>
+            <% end %>  
+                                    <% @attending.each do |event|%>
+                            <%= render :partial => '/events/user_event_card', locals: { event: event} %>
+            <% end %>  
+            </div>
+
+            </div>  
+    <% else %>
+        <p class="my-5">No events available.</p>
+    <% end %>
+</div>
