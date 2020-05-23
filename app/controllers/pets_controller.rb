@@ -1,5 +1,6 @@
 class PetsController < ApplicationController
   before_action :set_pet, only: [:show, :edit, :update, :destroy]
+    layout "form", only: [:new, :edit]
 
   # GET /pets
   # GET /pets.json
@@ -26,6 +27,7 @@ class PetsController < ApplicationController
   def create
     @pet = Pet.new(pet_params)
     @pet.user = current_user
+    @pet.gender = params[:gender]
 
     respond_to do |format|
       if @pet.save

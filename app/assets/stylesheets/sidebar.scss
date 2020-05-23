@@ -1,6 +1,18 @@
+
+.main-content {
+	box-sizing: border-box;
+	padding: 0 30px;
+}
+
+#body-row {
+	margin-left: 0;
+	margin-right: 0;
+
+}
+
+
 #sidebar-container {
 	min-height: 100vh;
-	background-color: #333;
 	padding: 0;
 }
 

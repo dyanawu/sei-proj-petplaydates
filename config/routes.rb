@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   # before_action :authenticate_user!
   root to: "events#homepage"
   resources :events
+  get '/dashboard', to: "users#dashboard", as: "dashboard"
   post '/events/:id/rsvp', to: 'events#rsvp', as: "rsvp"
 
   resources :pets

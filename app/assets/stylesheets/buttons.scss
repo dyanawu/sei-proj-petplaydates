@@ -19,3 +19,15 @@
 	top: 7px;
 	box-shadow: none;
 }
+
+.add-btn{
+	color: green;
+	font-size: 2.3rem;
+	transition-duration: 0.2s;
+		cursor: pointer;
+}
+
+.add-btn:hover{
+	color: lightgreen;
+	cursor: pointer;
+}

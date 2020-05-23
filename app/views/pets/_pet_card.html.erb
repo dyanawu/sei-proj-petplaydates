@@ -1,0 +1,12 @@
+  
+  <div class="card">
+        <%= image_tag pet.dp_url, :class=> "card-img-top"%>
+        <div class="card-body">
+      <h5 class="card-title"> <%= link_to pet.name, pet_path(pet) %>
+      <%= pet.gender_symbol %>
+      </h5>
+      <p class="card-text">
+      </p>
+    </div>
+  </div> 
+ 

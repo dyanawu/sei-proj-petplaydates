@@ -2,8 +2,15 @@ $orange: #ff8800;
 $blue: #315cfd;
 $red: #de3f00;
 $peach: #ff6600;
-$charcoal: #2d2d2d;
+$charcoal: #494949;
 $burnt: #ca6c13;
+$cream: #FFD0AE;
+
+$test: rgb(74, 92, 99);
+
+.text-test{
+	color: $test;
+}
 
 .text-orange {
 	color: $orange
@@ -45,4 +52,8 @@ $burnt: #ca6c13;
 
 .bg-red {
 	background-color: $red;
+}
+
+.bg-cream {
+	background-color: $cream;
 }

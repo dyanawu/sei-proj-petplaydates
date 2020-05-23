@@ -7,6 +7,16 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def dashboard
+    if user_signed_in?
+      @user = current_user
+      @pets = current_user.pets
+      @hosting = current_user.events
+      @attending = current_user.events_attending
+    else
+      redirect_to root_path
+    end
+  end
   # GET /users/1
   # GET /users/1.json
   def show
