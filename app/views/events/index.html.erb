@@ -1,7 +1,12 @@
-<p id="notice"><%= notice %></p>
+<div class="page-header bg-orange">
 
-<h1>Events</h1>
+  <div class="page-header-text text-white font-weight-bold">
+  Discover events that spark joy.
+  </div>
 
+</div>
+
+<div class="container">
 
 <div id="events-calendar">
 <%= month_calendar events: @events do |date, events| %>
@@ -50,3 +55,5 @@
 <br>
 
 <%= link_to 'New Event', new_event_path %>
+
+</div>
