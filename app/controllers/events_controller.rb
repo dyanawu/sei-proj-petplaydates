@@ -15,6 +15,9 @@ class EventsController < ApplicationController
 
   def homepage
     @events = Event.order(id: :desc)
+    @events_today = Event.today
+    @events_upcoming = Event.upcoming
+    @events_recent = Event.recent
   end
 
   # GET /events/1
@@ -26,20 +29,26 @@ class EventsController < ApplicationController
   def rsvp
     @event = Event.find(params[:id])
     @pet_ids = event_params[:pet_ids].reject!(&:blank?)
-    
+
     #Get unselected pets.
     unselected_pets = current_user.pets.select{ | pet | !@pet_ids.include?(pet.id.to_s)}
 
     # For each pet unselected, uninvite them if already rsvped.
     unselected_pets.each do |pet|
       @event.pets.delete(pet)
+      
     end
 
     # For each pet selected, add them to event if not already rsvped.
     @pet_ids.each do |id|
       pet = Pet.find(id)
       if !pet.is_rsvped(@event)
+        
         @event.pets << pet
+
+        #Send email to event host to notify of rsvp
+        @host = User.find(@event.user_id)
+        UserMailer.with(host: @host, pet: pet, event: @event).rsvp_to_host.deliver_later
       end
     end
 

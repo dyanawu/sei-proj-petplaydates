@@ -2,9 +2,9 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
-  has_one :profile
-  has_many :pets
-  has_many :events
+  has_one :profile, dependent: :destroy
+  has_many :pets, dependent: :destroy
+  has_many :events, dependent: :destroy
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable,
          :validatable, authentication_keys: [:login]
@@ -36,7 +36,6 @@ class User < ApplicationRecord
   end
 
   # returns events that the user's pets are attending
-  # might return duplicates if more than one pet attending the same event
   def events_attending
     Event.joins(:pets).where(pets: {user_id: self.id}).order(:start_time).distinct
   end
