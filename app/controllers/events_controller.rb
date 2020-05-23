@@ -3,6 +3,9 @@
 require "net/http"
 
 class EventsController < ApplicationController
+
+  layout "form", only: [:new, :edit]
+
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   # GET /events
   # GET /events.json

@@ -14,4 +14,13 @@ class Pet < ApplicationRecord
             return false
           end
       end
+
+      def gender_symbol
+        if self.gender="f"
+          "♀︎"
+        elsif self.gender="m"
+          "♂︎"
+        end
+      end
+
 end

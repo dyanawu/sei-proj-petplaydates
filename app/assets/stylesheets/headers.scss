@@ -1,0 +1,74 @@
+@import "colors";
+
+.page-header {
+	min-height: 35vh;
+	margin-bottom: 5vh;
+	padding: 2% 7%;
+	text-align: center;
+	background-image: url("patterns/pattern3.png");
+}
+
+.page-header-text {
+	width: 50%;
+	font-size: 3rem;
+    margin: 5% auto;
+    animation: zoomIn 1s;
+
+}
+
+.header-btn{
+    animation: headShake 2s infinite;
+}
+
+#welcome-header {
+	width: 100vw;
+	height: 95vh;
+	padding: 5vh 10% 0 10%;
+	background-color: $orange;
+
+	.header {
+		position: relative;
+		top: 30%;
+		margin-bottom: 1rem;
+	}
+
+	.header-text {
+		margin-bottom: 3rem;
+	}
+
+	h1 {
+		color: white;
+		font-size: 6rem;
+		font-weight: bolder;
+		letter-spacing: 1px;
+	}
+
+	p {
+		font-size: 2rem;
+		letter-spacing: 2px;
+	}
+
+	#animals {
+		top: 100px;
+	}
+
+	#dog {
+		position: absolute;
+		left: 10%;
+		z-index: 1;
+
+		img {
+			width: 80%;
+		}
+	}
+
+	#cat {
+		position: absolute;
+		left: 40%;
+
+		img {
+			width: 80%;
+		}
+	}
+
+}
