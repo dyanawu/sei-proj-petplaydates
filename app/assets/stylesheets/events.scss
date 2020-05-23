@@ -66,4 +66,32 @@ option[value=""][disabled] {
 //Styles for event/:id route
 .joined-pet {
   border-radius: 50%;
+  height: 250px;
+  width: 250px;
+}
+
+.rsvp-pets {
+  position: relative;
+  max-width: 300px;
+
+  label {
+    margin: 0;
+  }
+  input {
+    visibility: hidden;
+    position: absolute;
+  }
+  
+  .one-pet {
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+  
+  input:checked + .one-pet {
+    border: 2px solid #ff6600;
+  }
+  
+  .one-pet:hover {
+    border: 2px solid #ff6600;
+  }
 }
