@@ -15,7 +15,7 @@
     <div class="row my-5">
         <% @pets.each do |pet|%>
         <div class="col-lg-4 col-md-6 mb-3">
-            <%= render :partial => '/pets/user_pet_card', locals: { pet: pet} %>
+            <%= render :partial => '/pets/dashboard_pet_card', locals: { pet: pet} %>
         </div>
     <% end %>  
     </div>
@@ -35,10 +35,10 @@
             <div class="row my-5">
             <div class="card-deck">
                         <% @hosting.each do |event|%>
-                            <%= render :partial => '/events/user_event_card', locals: { event: event} %>
+                            <%= render :partial => '/events/dashboard_event_card', locals: { event: event} %>
             <% end %>  
                                     <% @attending.each do |event|%>
-                            <%= render :partial => '/events/user_event_card', locals: { event: event} %>
+                            <%= render :partial => '/events/dashboard_event_card', locals: { event: event} %>
             <% end %>  
             </div>
 
