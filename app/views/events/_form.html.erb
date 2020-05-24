@@ -58,29 +58,34 @@
 </div>
 <div id="location-select">
 </div>
-<div class="form-label">Select Event Type</div>
-<%= form.collection_select :type_id, @types, :id, :name,  {}, {:class => 'form-control', :id => 'type-select', :required => true} %>
-<div class="field" hidden>
-	<%= form.label :min_pets, "Minimum Pet Participation", class:"form-label" %>
-	<%= form.number_field :min_pets, class:"form-control", value:"0", :required => true %>
-</div>
 
 <div class="row">
-  <div class="col-6">
-    <div class="form-label">Select Event Type</div>
-  <%= form.collection_select :type_id, @types, :id, :name,  {}, {:class => 'form-control', :id => 'type-select', :required => true} %>
-  <div class="field" hidden>
-    <%= form.label :min_pets, "Minimum Pet Participation", class:"form-label" %>
-    <%= form.number_field :min_pets, class:"form-control", value:"0", :required => true %>
-  </div>
-  </div>
-  
+	<div class="col-6">
+		<div class="form-label">Select Event Type</div>
+		<%= form.collection_select :type_id, @types, :id, :name,  {}, {:class => 'form-control', :id => 'type-select', :required => true} %>
+		<div class="field" hidden>
+			<%= form.label :min_pets, "Minimum Pet Participation", class:"form-label" %>
+			<%= form.number_field :min_pets, class:"form-control", value:"0", :required => true %>
+		</div>
+	</div>
+
 	<div class="col-6">
 		<div class="field">
 			<%= form.label :img_url, "Image (Optional)", class:"form-label" %>
-			  <%= form.text_field :img_url, class: "form-control"  %>
+			<%= form.text_field :img_url, class: "form-control"  %>
 		</div>
 	</div>
+</div>
+
+<div class="row">
+      <%= form.label :img_url, "Image:" %>
+      <div class="form_controls">
+        <%= form.file_field :img_url %>
+        <%= form.hidden_field(:image_cache) %>
+      </div>
+	</div>
+
+</div>
 
 <div class="actions">
 	<%= form.submit "Create Event", class:"btn btn-primary"%>
