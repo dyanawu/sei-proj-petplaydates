@@ -46,13 +46,8 @@
       <% if @event.pets.count != 0 %>
         <% @event.pets.each do |pet| %>
           <div class="col-sm-3 mr-0 mb-3">
-            <% if pet.species == "1"%>
-              <% species = "dog"%>
-            <% else %>
-              <% species = "cat"%>
-            <% end %>
             <% owner = User.find(pet.user_id).username %>
-            <% popupText = "#{pet.name.capitalize} the #{species} with @#{owner}" %>
+            <% popupText = "#{pet.name.capitalize} the #{pet.species.name} with @#{owner}" %>
             <%= link_to image_tag(pet.dp_url, :class => "joined-pet", :action => "pet image", :title => popupText), pet_path(pet) %>
           </div>
         <%end %>
