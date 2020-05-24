@@ -3,6 +3,8 @@ devise_for :users, controllers: { registrations: 'users/registrations' }  # unco
   # before_action :authenticate_user!
   root to: "events#homepage"
   resources :events
+  get '/profile', to: 'users#edit_profile', as: 'edit_profile'
+  patch '/profile', to: 'users#save_profile'
   get '/dashboard', to: "users#dashboard", as: "dashboard"
   post '/events/:id/rsvp', to: 'events#rsvp', as: "rsvp"
 

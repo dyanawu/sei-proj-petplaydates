@@ -28,6 +28,7 @@
     </div>
     <div class="navbar-nav pr-4">
       <% if user_signed_in? %>
+              <%= link_to "Profile", edit_profile_path, :class => "nav-item nav-link" %>
         <%= link_to "#{current_user.username}'s account", edit_user_registration_path, :class => "nav-item nav-link" %>
         <%= link_to "Sign Out", destroy_user_session_url, method: :delete, :class => "nav-item nav-link" %>
       <% else %>

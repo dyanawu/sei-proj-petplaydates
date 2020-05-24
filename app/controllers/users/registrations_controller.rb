@@ -12,7 +12,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    @user_profile = Profile.create(user_id: @user.id)
+    @user_profile = Profile.create(user_id: @user.id, dp_url: "", bio: "", location: "", gender: "", birthday: "")
 
   end
 
