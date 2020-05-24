@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # uncomment below when we're ready
+devise_for :users, controllers: { registrations: 'users/registrations' }  # uncomment below when we're ready
   # before_action :authenticate_user!
   root to: "events#homepage"
   resources :events
