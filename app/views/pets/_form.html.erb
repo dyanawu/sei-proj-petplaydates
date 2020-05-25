@@ -22,7 +22,7 @@
     </div>
     <div class="col-6">
       <%= form.label :dp_url, "Image URL", class:"form-label" %>
-      <%= form.text_field :dp_url, :required => true, :class => "form-control" %>
+      <%= url_field("pet", "dp_url", :required => true, :class => "form-control")%>
     </div>
   </div>
   <div class="row">
