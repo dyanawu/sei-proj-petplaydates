@@ -29,18 +29,23 @@ puts
 ## Fake user profiles for each user
 User.all.each do |user|
     puts "Created profile for #{user.username}"
-    Profile.create(user_id: user.id, dp_url: Faker::LoremFlickr.image, bio: Faker::Lorem.paragraph, location: Faker::Address.street_address, gender: Faker::Gender.short_binary_type, birthday:"#{rand(1950..2000)}-#{rand(1..12)}-#{rand(1-28)}")
+    Profile.create(user_id: user.id, dp_url: "https://picsum.photos/seed/#{user.username}/400", bio: Faker::Lorem.paragraph, location: Faker::Address.street_address, gender: Faker::Gender.short_binary_type, birthday:"#{rand(1950..2000)}-#{rand(1..12)}-#{rand(1-28)}", name: "#{user.username}")
 end
 
 25.times{print"-"}
 puts
 
 ## Fake Pets for random users
-30.times do
+36.times do
 
-    pet = Pet.create(name: Faker::Name.first_name, dp_url: Faker::LoremFlickr.image, species_id: rand(1..2), birthday: "#{rand(1990..2019)}-#{rand(1..12)}-#{rand(1-28)}", bio: Faker::Lorem.paragraph, gender: Faker::Gender.short_binary_type, user_id: rand(User.first.id..User.last.id))
+  pet = Pet.create(name: Faker::Name.first_name, species_id: rand(1..2), birthday: "#{rand(1990..2019)}-#{rand(1..12)}-#{rand(1-28)}", bio: Faker::Lorem.paragraph, gender: Faker::Gender.short_binary_type, user_id: rand(User.first.id..User.last.id))
+  if pet.species_id == 1
+    pet.update(dp_url: "https://loremflickr.com/400/400/puppy?lock=#{pet.id}")
+  else
+    pet.update(dp_url: "https://loremflickr.com/400/400/kitten?lock=#{pet.id}")
+  end
 
-    puts "Created #{pet.name} the #{pet.species.name} (#{pet.gender}) belonging to #{pet.user.username} (user id: #{pet.user.id})"
+  puts "Created #{pet.name} the #{pet.species.name} (#{pet.gender}) belonging to #{pet.user.username} (user id: #{pet.user.id})"
 end
 
 25.times{print"-"}
@@ -62,6 +67,7 @@ end
     #Event is named after user. E.g. "chelsea's event"
 
     event = Event.create(user_id: user.id, title: "#{user.username}'s event", description: Faker::Lorem.paragraph, capacity: rand(2..20), location: Faker::Address.street_address, start_time: start_time, end_time: start_time + rand(1..4).hours, min_pets: 0, type_id: 1)
+    event.update(img_url: "https://loremflickr.com/400/400/park?random=#{event.id}")
 
     puts "Created #{event.title}"
 end
@@ -77,6 +83,7 @@ end
     #Event is named after user. E.g. "chelsea's event"
 
     event = Event.create(user_id: user.id, title: "#{user.username}'s event", description: Faker::Lorem.paragraph, capacity: rand(2..20), location: Faker::Address.street_address, start_time: start_time, end_time: start_time + rand(1..4).hours, min_pets: 0, type_id: 2)
+    event.update(img_url: "https://loremflickr.com/400/400/cafe?random=#{event.id}")
 
     puts "Created #{event.title}"
 end
@@ -92,6 +99,7 @@ end
     #Event is named after user. E.g. "chelsea's event"
 
     event = Event.create(user_id: user.id, title: "#{user.username}'s event", description: Faker::Lorem.paragraph, capacity: rand(2..20), location: Faker::Address.street_address, start_time: start_time, end_time: start_time + rand(1..4).hours, min_pets: 0, type_id: 3)
+    event.update(img_url: "https://loremflickr.com/400/400/walk?random=#{event.id}")
 
     puts "Created #{event.title}"
 end
