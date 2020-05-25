@@ -10,7 +10,7 @@
     <div class="card-body">
       <h5 class="card-title"> <%= link_to event.title, event_path(event) %> </h5>
       <p class="card-text">
-      <i class="far fa-calendar mr-2"></i><%= event.start_time.localtime.strftime("%d %b, %I:%M %p") %>
+      <i class="far fa-calendar mr-2"></i><%= event.start_datetime %>
       <br><i class="fas fa-location-arrow mr-2"></i><%= event.location %></strong>
 
         <br><i class="fas fa-crown mr-2"></i>Hosted by <%= link_to "@#{event.user.username}", user_path(event.user)%>
