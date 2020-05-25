@@ -69,7 +69,9 @@ require 'action_view'
   end
 
   def self.recent
-    self.order(id: :desc).limit(15)
+    self.where(
+      "start_time > ?", Time.now)
+      .order(id: :desc).limit(15)
   end
 
   validate :end_after_start

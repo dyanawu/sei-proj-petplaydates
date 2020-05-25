@@ -27,7 +27,7 @@
     <div id="cat">
     <%= image_tag "index/cat-header1.png"%>
     </div>
-  </div>  
+  </div>
   </div>
 
 
@@ -44,7 +44,7 @@
 
 <div class="my-5 owl-carousel owl-theme">
 
-<% @events.each do |event| %>
+<% @events.today.each do |event| %>
 <div class="item">
 <%= render :partial => 'event_card', locals: { event: event } %>
 
@@ -58,7 +58,7 @@
 
 
 <div class="my-5 owl-carousel owl-theme">
-<% @events.each do |event| %>
+<% @events.upcoming.each do |event| %>
 <div class="item">
 <%= render :partial => 'event_card', locals: { event: event } %>
 </div>
@@ -70,7 +70,7 @@
 
 <div class="my-5 owl-carousel owl-theme">
 
-<% @events.each do |event| %>
+<% @events.recent.each do |event| %>
 <div class="item">
 <%= render :partial => 'event_card', locals: { event: event } %>
 </div>
