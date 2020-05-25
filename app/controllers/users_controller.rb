@@ -31,8 +31,16 @@ class UsersController < ApplicationController
   def save_profile
     @profile = Profile.find(current_user.profile.id)
     @user = User.find(current_user.id)
+    uploaded_file = params[:profile][:dp_url].path
+    cloudinary_file = Cloudinary::Uploader.upload(uploaded_file)
     @profile.update(profile_params)
-    redirect_to @user
+    url = cloudinary_file['url']
+    @profile[:dp_url] = url
+    if @profile.save
+      redirect_to @user
+    else
+      render 'edit_profile'
+    end
   end
 
   private
