@@ -3,7 +3,7 @@
 		<div class="sticky-top sticky-offset">
 
 
-			<div class="card ml-4 shadow">
+			<div class="card ml-4 shadow fixed-card">
 			<% if @user.profile.dp_url.empty? %>
 			<%= image_tag("patterns/user-pic.png", :class=>"card-img-top bg-orange") %>
 			<% else %>

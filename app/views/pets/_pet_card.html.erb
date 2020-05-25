@@ -4,6 +4,11 @@
         <div class="card-body">
       <h5 class="card-title"> <%= link_to pet.name, pet_path(pet) %>
       <%= pet.gender_symbol %>
+						<% if pet.species.name=="dog"%>
+						<i class="fas fa-dog"></i>
+						<% else %>
+						<i class="fas fa-cat"></i>
+						<% end%>
       </h5>
       <p class="card-text">
       </p>
