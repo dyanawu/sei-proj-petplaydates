@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+      layout "form", only: [:edit_profile]
 
   # GET /users
   # GET /users.json
@@ -22,10 +23,25 @@ class UsersController < ApplicationController
   def show
   end
 
+  def edit_profile
+    @profile = Profile.find(current_user.profile.id)
+  end
+
+  def save_profile
+    @profile = Profile.find(current_user.profile.id)
+    @user = User.find(current_user.id)
+    @profile.update(profile_params)
+    redirect_to @user
+  end
+
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_user
     @user = User.find(params[:id])
+  end
+
+  def profile_params
+      params.require(:profile).permit(:name, :dp_url, :birthday, :bio, :gender)
   end
 
 end

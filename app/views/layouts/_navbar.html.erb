@@ -1,39 +1,51 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
-  <%= image_tag 'brand/logo-orange.png', :class=>"nav-icon"%>
-  <%= link_to 'pawdates', root_path, :class => "navbar-brand font-weight-bold" %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+	<%= image_tag 'brand/logo-orange.png', :class=>"nav-icon"%>
+	<%= link_to 'pawdates', root_path, :class => "navbar-brand font-weight-bold" %>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+		<span class="navbar-toggler-icon"></span>
+	</button>
 
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <div class="navbar-nav mr-auto">
+	<div class="collapse navbar-collapse" id="navbarNav">
+		<div class="navbar-nav mr-auto">
 
-    
-      <%= link_to 'Events', events_path, :class => "nav-item nav-link" %>
 
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Add
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-        <%= link_to 'Create Pet', new_pet_path, :class => "dropdown-item" %>
-        <%= link_to 'Create Event', new_event_path, :class => "dropdown-item" %>
-        </div>
-      </li>
+			<%= link_to 'Events', events_path, :class => "nav-item nav-link" %>
 
-      <%= link_to 'Pets', pets_path, :class => "nav-item nav-link" %>
-      <%= link_to 'Users', users_path, :class => "nav-item nav-link" %>
-      <%= link_to 'Dashboard', dashboard_path, :class => "nav-item nav-link" %>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false">
+					Add
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<%= link_to 'Create Pet', new_pet_path, :class => "dropdown-item" %>
+					<%= link_to 'Create Event', new_event_path, :class => "dropdown-item" %>
+				</div>
+			</li>
 
-    </div>
-    <div class="navbar-nav pr-4">
-      <% if user_signed_in? %>
-              <%= link_to "Profile", edit_profile_path, :class => "nav-item nav-link" %>
-        <%= link_to "#{current_user.username}'s account", edit_user_registration_path, :class => "nav-item nav-link" %>
-        <%= link_to "Sign Out", destroy_user_session_url, method: :delete, :class => "nav-item nav-link" %>
-      <% else %>
-        <a href="/users/sign_in" class="btn btn-orange" role="button">Login</a>
-      <% end%>
-    </div>
-  </div>
+			<%= link_to 'Pets', pets_path, :class => "nav-item nav-link" %>
+			<%= link_to 'Users', users_path, :class => "nav-item nav-link" %>
+			<%= link_to 'Dashboard', dashboard_path, :class => "nav-item nav-link" %>
+
+		</div>
+		<div class="navbar-nav pr-4">
+			<% if user_signed_in? %>
+
+			<%= link_to "#{current_user.username}'s account", edit_user_registration_path, :class => "nav-item nav-link" %>
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown"
+					aria-haspopup="true" aria-expanded="false">
+					Profile
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<%= link_to 'View', user_path(current_user), :class => "dropdown-item" %>
+					<%= link_to 'Edit', edit_profile_path, :class => "dropdown-item" %>
+				</div>
+			</li>
+
+			<%= link_to "Sign Out", destroy_user_session_url, method: :delete, :class => "nav-item nav-link" %>
+			<% else %>
+			<a href="/users/sign_in" class="btn btn-orange" role="button">Login</a>
+			<% end%>
+		</div>
+	</div>
 </nav>
