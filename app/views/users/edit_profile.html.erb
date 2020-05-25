@@ -1,7 +1,7 @@
 <%= form_with(model: @profile, local: true) do |form| %>
   <% if @profile.errors.any? %>
     <div id="error_explanation">
-      <div class="error-header"><%= pluralize(pet.errors.count, "error") %> prohibited this pet from being saved:</div>
+      <div class="error-header"><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</div>
       <ul>
         <% @profile.errors.full_messages.each do |message| %>
           <li class="error-msg-list"><%= message %></li>
