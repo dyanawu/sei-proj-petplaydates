@@ -20,6 +20,9 @@ class PetsController < ApplicationController
 
   # GET /pets/1/edit
   def edit
+    if @pet.user != current_user
+      redirect_to action: "show"
+    end
   end
 
   # POST /pets
