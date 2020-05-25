@@ -65,6 +65,7 @@ class EventsController < ApplicationController
   def new
     @event = Event.new
     @types = Type.all
+
   end
 
   # GET /events/1/edit
@@ -82,6 +83,15 @@ class EventsController < ApplicationController
     @event = parse_event_to_local_time(Event.new(event_params))
     @event.user = current_user
 
+
+    if !params[:event][:img_url].nil?
+      uploaded_file = params[:event][:img_url].path
+      cloudinary_file = Cloudinary::Uploader.upload(uploaded_file)
+      @event.img_url = cloudinary_file['url']
+    else
+      @event.img_url = ""
+    end
+
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
@@ -96,6 +106,7 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
+    
     respond_to do |format|
       if @event.update(event_params)
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
