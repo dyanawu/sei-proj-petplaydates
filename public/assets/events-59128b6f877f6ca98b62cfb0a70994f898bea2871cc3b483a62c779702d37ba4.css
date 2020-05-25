@@ -1,0 +1,109 @@
+/* line 7, app/assets/stylesheets/events.scss */
+.form-header {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 30px;
+  color: #ff6600;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* line 16, app/assets/stylesheets/events.scss */
+.form-label {
+  font-size: 15px;
+  margin-bottom: 2px;
+  margin-top: 5px;
+  font-weight: bold;
+  color: #2d2d2d;
+}
+
+/* line 24, app/assets/stylesheets/events.scss */
+.form-control, .input-group {
+  margin-bottom: 5px;
+}
+
+/* line 28, app/assets/stylesheets/events.scss */
+#location-select {
+  margin-top: 10px;
+}
+
+/* line 32, app/assets/stylesheets/events.scss */
+#google-button {
+  color: #315cfd;
+  border: solid 1px #CED4DA;
+}
+
+/* line 37, app/assets/stylesheets/events.scss */
+.btn-primary {
+  margin-top: 15px;
+}
+
+/* line 41, app/assets/stylesheets/events.scss */
+.error-msg {
+  margin-bottom: 5px;
+  color: red;
+}
+
+/* line 46, app/assets/stylesheets/events.scss */
+.error-msg-list {
+  color: red;
+  margin-bottom: 2px;
+}
+
+/* line 51, app/assets/stylesheets/events.scss */
+.error-header {
+  font-size: 20;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  color: red;
+}
+
+/* line 58, app/assets/stylesheets/events.scss */
+#type-select {
+  text-transform: capitalize;
+}
+
+/* line 62, app/assets/stylesheets/events.scss */
+option[value=""][disabled] {
+  display: none;
+}
+
+/* line 67, app/assets/stylesheets/events.scss */
+.joined-pet {
+  border-radius: 50%;
+  height: 250px;
+  width: 250px;
+}
+
+/* line 73, app/assets/stylesheets/events.scss */
+.rsvp-pets {
+  position: relative;
+  max-width: 300px;
+}
+
+/* line 77, app/assets/stylesheets/events.scss */
+.rsvp-pets label {
+  margin: 0;
+}
+
+/* line 80, app/assets/stylesheets/events.scss */
+.rsvp-pets input {
+  visibility: hidden;
+  position: absolute;
+}
+
+/* line 85, app/assets/stylesheets/events.scss */
+.rsvp-pets .one-pet {
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+/* line 90, app/assets/stylesheets/events.scss */
+.rsvp-pets input:checked + .one-pet {
+  border: 2px solid #ff6600;
+}
+
+/* line 94, app/assets/stylesheets/events.scss */
+.rsvp-pets .one-pet:hover {
+  border: 2px solid #ff6600;
+}

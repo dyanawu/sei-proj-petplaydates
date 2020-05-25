@@ -84,3 +84,14 @@
   text-align: right;
   padding-left: 10px;
 }
+
+/* line 78, app/assets/stylesheets/sidebar.scss */
+.search-sidebar-container {
+  border: 1px solid grey;
+  margin-left: 20px;
+}
+
+/* line 83, app/assets/stylesheets/sidebar.scss */
+.search td {
+  text-align: left;
+}
