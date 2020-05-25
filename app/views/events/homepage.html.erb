@@ -7,7 +7,7 @@
   <div class="header">
 
   <div class="header-text">
-      <h1>PAWDATES</h1>
+    <h1>PAWDATES</h1>
     <p class="sub-header">forming 
     <span class="text-red">pawsitive</span>
      connections.</p>
@@ -41,7 +41,9 @@
 
 <%= render :partial => 'event_header', locals: { header: "Happening today" } %>
 
-
+<% if @events.today.length == 0 %>
+<p class="my-5 h4">There aren't any events happening today. Why not <%= link_to 'start one', new_event_path %>?</p>
+<% else %>
 <div class="my-5 owl-carousel owl-theme">
 
 <% @events.today.each do |event| %>
@@ -51,12 +53,14 @@
 </div>
 <% end %>
 </div>
+<% end %>
 
 
 <%= render :partial => 'event_header', locals: { header: "Upcoming Events" } %>
 
-
-
+<% if @events.upcoming.length == 0 %>
+<p>There aren't any events happening this week. Why not <%= link_to 'start one', new_event_path %>?</p>
+<% else %>
 <div class="my-5 owl-carousel owl-theme">
 <% @events.upcoming.each do |event| %>
 <div class="item">
@@ -64,6 +68,7 @@
 </div>
 <% end %>
 </div>
+<% end %>
 
 <%= render :partial => 'event_header', locals: { header: "Recently Added" } %>
 
