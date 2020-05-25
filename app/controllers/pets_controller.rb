@@ -31,6 +31,10 @@ class PetsController < ApplicationController
     @pet = Pet.new(pet_params)
     @pet.user = current_user
     @pet.gender = params[:gender]
+    
+    uploaded_file = params[:pet][:dp_url].path
+    cloudinary_file = Cloudinary::Uploader.upload(uploaded_file)
+    @pet.dp_url = cloudinary_file['url']
 
     respond_to do |format|
       if @pet.save
@@ -46,8 +50,14 @@ class PetsController < ApplicationController
   # PATCH/PUT /pets/1
   # PATCH/PUT /pets/1.json
   def update
+        
+    uploaded_file = params[:pet][:dp_url].path
+    cloudinary_file = Cloudinary::Uploader.upload(uploaded_file)
     respond_to do |format|
+      
       if @pet.update(pet_params)
+        @pet.dp_url = cloudinary_file['url']
+        @pet.save
         format.html { redirect_to @pet, notice: 'Pet was successfully updated.' }
         format.json { render :show, status: :ok, location: @pet }
       else

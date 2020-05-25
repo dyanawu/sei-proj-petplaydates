@@ -3,8 +3,11 @@
     <div class="sticky-top sticky-offset">
       <%# left-flush event card starts here %>
       <div class="card ml-4 shadow  fixed-card">
-        <img src=<%= @event.img_url %> class="card-img-top" alt="event image" />
-        <div class="card-body">
+			<% if @event.img_url.empty? %>
+			<%= image_tag("patterns/pattern3.png", :class=>"card-img-top bg-orange") %>
+			<% else %>
+				<img src=<%= @event.img_url%> class="card-img-top" alt="..." />
+				<%end%>        <div class="card-body">
           <h5 class="card-title text-orange">
             <strong><%= @event.title %></strong>
           </h5>
