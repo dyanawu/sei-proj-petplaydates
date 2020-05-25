@@ -71,3 +71,8 @@
 .card:hover {
   top: 3px;
 }
+
+/* line 70, app/assets/stylesheets/cards.scss */
+.fixed-card:hover {
+  top: 0 !important;
+}

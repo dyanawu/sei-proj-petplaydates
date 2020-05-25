@@ -12322,6 +12322,11 @@ nav button a {
   top: 3px;
 }
 
+/* line 70, app/assets/stylesheets/cards.scss */
+.fixed-card:hover {
+  top: 0 !important;
+}
+
 /* line 11, app/assets/stylesheets/colors.scss */
 .text-test {
   color: #4a5c63;
@@ -12471,7 +12476,7 @@ nav button a {
 /* line 2, app/assets/stylesheets/sidebar.scss */
 .main-content {
   box-sizing: border-box;
-  padding: 0 30px;
+  padding: 0 50px;
 }
 
 /* line 7, app/assets/stylesheets/sidebar.scss */
