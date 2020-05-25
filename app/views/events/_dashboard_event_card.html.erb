@@ -19,13 +19,13 @@
               </p>
           </div>
         </div>
-    </div>    
+    </div>
     <div class="card-body">
       <h5 class="card-title"> <%= link_to event.title, event_path(event) %> </h5>
       <p class="card-text">
-      <i class="far fa-calendar mr-1"></i><%= event.start_time.localtime.strftime("%d %b, %I:%M %p") %>
+      <i class="far fa-calendar mr-1"></i><%= event.start_datetime %>
       <br><i class="fas fa-location-arrow mr-1"></i><%= event.location %></strong>
-      
+
       <% if event.user.id!=current_user.id%>
         <br>Hosted by <%= link_to "@#{event.user.username}", user_path(event.user)%>
       <% end %>
