@@ -2,14 +2,16 @@
     <% if event.status=="past" %>
     <div class="card-flag bg-danger text-white">ended <%=event.ended_since %> ago</div>
     <% else %>
-    <div class="card-flag bg-dark text-white">in <%=event.time_left %></div>
+    <div class="card-flag bg-dark text-white"><%=event.time_left %></div>
     <%end%>
-    <img class="card-img-top" src="https://picsum.photos/300" alt="Card image cap">
+    
+    <%= image_tag(event.img_url.nil? ? "patterns/pattern3.png" : event.img_url, :class=>"card-img-top bg-secondary") %>
+
     <div class="card-body">
       <h5 class="card-title"> <%= link_to event.title, event_path(event) %> </h5>
       <p class="card-text">
-      <i class="far fa-calendar mr-1"></i><%= event.start_time.localtime.strftime("%d %b, %I:%M %p") %>
-      <br><i class="fas fa-location-arrow mr-1"></i><%= event.location %></strong>
+      <i class="far fa-calendar mr-2"></i><%= event.start_time.localtime.strftime("%d %b, %I:%M %p") %>
+      <br><i class="fas fa-location-arrow mr-2"></i><%= event.location %></strong>
 
         <br><i class="fas fa-crown mr-2"></i>Hosted by <%= link_to "@#{event.user.username}", user_path(event.user)%>
       </p>

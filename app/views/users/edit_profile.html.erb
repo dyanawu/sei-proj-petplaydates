@@ -1,0 +1,44 @@
+<%= form_with(model: @profile, local: true) do |form| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <div class="error-header"><%= pluralize(pet.errors.count, "error") %> prohibited this pet from being saved:</div>
+      <ul>
+        <% @profile.errors.full_messages.each do |message| %>
+          <li class="error-msg-list"><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="row">
+    <div class="col-6">
+      <%= form.label :name, class:"form-label" %>
+      <%= form.text_field :name, :class => "form-control"  %>
+    </div>
+    <div class="col-6">
+      <%= form.label :dp_url, "Image URL", class:"form-label" %>
+      <%= form.text_field :dp_url, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <%= form.label :birthday, class:"form-label" %>
+      <div class="form-inline"><%= form.date_select :birthday, {start_year: Date.today.year - 30, end_year: Date.today.year, order: [:day, :month, :year]}, {:class=> "form-control"} %></div>
+    </div>
+    <div class="col-6">
+      <div class="form-label">Gender</div>
+      <select class="form-control" name="gender">
+        <option value="f">Female</option>
+        <option value="m">Male</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <%= form.label :bio, class:"form-label" %>
+      <%= form.text_area :bio, :class => "form-control" %>
+    </div>
+  </div>
+  <div class="actions">
+    <%= form.submit "Save Profile", :class => "btn btn-primary" %>
+  </div>
+<% end %>

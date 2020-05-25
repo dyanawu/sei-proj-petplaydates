@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # uncomment below when we're ready
+devise_for :users, controllers: { registrations: 'users/registrations' }  # uncomment below when we're ready
   # before_action :authenticate_user!
   root to: "events#homepage"
   resources :events
+  get '/profile', to: 'users#edit_profile', as: 'edit_profile'
+  patch '/profile', to: 'users#save_profile'
   get '/dashboard', to: "users#dashboard", as: "dashboard"
   post '/events/:id/rsvp', to: 'events#rsvp', as: "rsvp"
 
