@@ -1,35 +1,19 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Pets</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Dp url</th>
-      <th>Species</th>
-      <th>Birthday</th>
-      <th>Bio</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="page-header bg-orange">
+  <div class="page-header-text text-white font-weight-bold">
+    Everyone's best friends.
+  </div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
+  <div class="row card-deck">
     <% @pets.each do |pet| %>
-      <tr>
-        <td><%= pet.name %></td>
-        <td><%= pet.dp_url %></td>
-        <td><%= pet.species.dispname %></td>
-        <td><%= pet.birthday %></td>
-        <td><%= pet.bio %></td>
-        <td><%= link_to 'Show', pet %></td>
-        <td><%= link_to 'Edit', edit_pet_path(pet) %></td>
-        <td><%= link_to 'Destroy', pet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <div class="col-sm-3 mr-0 mb-5">
+        <% popupText = "#{pet.name} the #{pet.species.name}" %>
+        <%= link_to image_tag(pet.dp_url, :class => "joined-pet", :action => "pet image", :title => popupText), pet_path(pet) %>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Pet', new_pet_path %>
+  </div>
+</div>
+</div>
+</div>
