@@ -8,10 +8,16 @@
 				<div class="card-body">
 					<h5 class="card-title text-orange">
 						<strong><%=@pet.name%> <%=@pet.gender_symbol %></strong>
-						</a>
+
+						<% if @pet.species.name=="dog"%>
+						<i class="fas fa-dog"></i>
+						<% else %>
+						<i class="fas fa-cat"></i>
+						<% end%>
+
 					</h5>
 					<p>
-						<br><i class="fas fa-birthday-cake mr-2"></i><%=@pet.birthday%>
+						<i class="fas fa-birthday-cake mr-2"></i><%=@pet.birthday.strftime("%d %B %Y")%>
 						<br><i class="fas fa-user-circle mr-2"></i><%= link_to @pet.user.username, user_path(@pet.user)%>
 						<br><i class="fas fa-paw mr-2"></i>Events Attended: <%=@pet.events.count%>
 					</p>
