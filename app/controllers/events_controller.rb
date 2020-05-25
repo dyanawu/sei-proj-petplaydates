@@ -36,14 +36,12 @@ class EventsController < ApplicationController
     # For each pet unselected, uninvite them if already rsvped.
     unselected_pets.each do |pet|
       @event.pets.delete(pet)
-      
     end
 
     # For each pet selected, add them to event if not already rsvped.
     @pet_ids.each do |id|
       pet = Pet.find(id)
       if !pet.is_rsvped(@event)
-        
         @event.pets << pet
 
         #Send email to event host to notify of rsvp
@@ -64,6 +62,9 @@ class EventsController < ApplicationController
   # GET /events/1/edit
   def edit
     @types = Type.all
+    if @event.user != current_user
+      redirect_to action: "show"
+    end
   end
 
   # POST /events
