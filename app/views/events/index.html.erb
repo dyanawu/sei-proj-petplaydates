@@ -1,59 +1,22 @@
 <div class="page-header bg-orange">
 
   <div class="page-header-text text-white font-weight-bold">
-  Discover events that spark joy.
+    Discover events that spark joy.
   </div>
 
 </div>
 
 <div class="container">
 
-<div id="events-calendar">
-<%= month_calendar events: @events do |date, events| %>
-  <%=  date.strftime("%d %b") %>
+  <div id="events-calendar">
+    <%= month_calendar events: @events do |date, events| %>
+      <%=  date.strftime("%d %b") %>
 
-  <% events.each do |event| %>
-    <div>
-      <%= link_to event.title, event_path(event) %>
-    </div>
-  <% end %>
-<% end %>
-</div>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Capacity</th>
-      <th>Location</th>
-      <th>Start time</th>
-      <th>End time</th>
-      <th>Min pets</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.title %></td>
-        <td><%= event.description %></td>
-        <td><%= event.capacity %></td>
-        <td><%= event.location %></td>
-        <td><%= event.start_time %></td>
-        <td><%= event.end_time %></td>
-        <td><%= event.min_pets %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <% events.each do |event| %>
+        <div>
+          <%= link_to event.title, event_path(event) %>
+        </div>
+      <% end %>
     <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Event', new_event_path %>
-
+  </div>
 </div>
