@@ -1,29 +1,19 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Users</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Dp url</th>
-      <th>Birthday</th>
-      <th>Bio</th>
-      <th colspan="1"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="page-header bg-orange">
+  <div class="page-header-text text-white font-weight-bold">
+    Cool people. Like you.
+  </div>
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
+  <div class="row card-deck">
     <% @users.each do |user| %>
-      <tr>
-        <td><%= user.username %></td>
-        <td><%= user.profile.dp_url %></td>
-        <td><%= user.profile.birthday %></td>
-        <td><%= user.profile.bio %></td>
-        <td><%= link_to 'Show', user %></td>
-      </tr>
+      <div class="col-sm-3 mr-0 mb-5">
+        <% popupText = "@#{user.username}" %>
+        <%= link_to image_tag(user.profile.dp_url, :class => "joined-pet", :action => "pet image", :title => popupText), user_path(user) %>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
+  </div>
+</div>
+</div>
+</div>

@@ -4,25 +4,30 @@
 
 
 			<div class="card ml-4 shadow">
-			<% if @user.profile.nil? || @user.profile.dp_url.empty? %>
+			<% if @user.profile.dp_url.empty? %>
 			<%= image_tag("patterns/user-pic.png", :class=>"card-img-top bg-orange") %>
 			<% else %>
 				<img src=<%= @user.profile.dp_url%> class="card-img-top" alt="..." />
 				<%end%>
 				<div class="card-body">
 					<h5 class="card-title text-orange">
-						<strong><%=@user.username%></strong>
+						<%= @user.profile.name%> <strong>@<%=@user.username%></strong>
 					</h5>
 					<p>
-						<% if !@user.profile.nil? %>
-						<br><i class="fas fa-birthday-cake mr-2"></i><%= @user.profile.birthday %>
-						<br><i class="fas fa-paw mr-2"></i><%= @user.profile.bio %>
-						<% end %>
-						<br><i class="fas fa-crown mr-2"></i>Events Hosted: <%=@user.events.count%>
+						<i class="fas fa-crown mr-2"></i>Events Hosted: <%=@user.events.count%>
+
+					<% if @user.profile.birthday!=""%>
+						<br><i class="fas fa-birthday-cake mr-2"></i><%= @user.profile.birthday.strftime("%d %B") %>
+					<% end %>
+					
+					</p>
+
+					<p>
+					<%= @user.profile.bio %>
 					</p>
 				</div>
 				<div class="card-footer">
-					<small class="text-muted">Joined <%=@user.created_at%> </small>
+					<small class="text-muted">Joined <%=@user.created_at.strftime("%d %B %Y")%> </small>
 				</div>
 			</div>
 
@@ -33,7 +38,7 @@
 
 	<div class="col-lg-9 col-md-8 main-content">
 
-		<h2 class="mb-3 highlight"><%= @user.username %>'s Pets</h2>
+		<h2 class="mb-3 highlight"><%= @user.profile.name %>'s Pets</h2>
 
 		<% if @user.pets.count!=0 %>
 		<div class="row card-deck">
@@ -61,7 +66,7 @@
 		<% else %>
 		<p><%= @user.username %> has no upcoming events.</p>
 		<% end %>
-		<h2 class="my-3 highlight"><%= @user.username %>'s Past Events</h2>
+		<h2 class="my-3 highlight"><%= @user.profile.name %>'s Past Events</h2>
 
 		<% if @user.events.count!=0 %>
 		<div class="row card-deck">
