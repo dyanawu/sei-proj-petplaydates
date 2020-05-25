@@ -1,9 +1,8 @@
-<p id="notice"><%= notice %></p>
-<div class="row">
+<div class="row" id="body-row">
   <div id="sidebar-container" class="d-md-block col-lg-3 col-md-4 bg-white">
     <div class="sticky-top sticky-offset">
       <%# left-flush event card starts here %>
-      <div class="card ml-4 shadow">
+      <div class="card ml-4 shadow  fixed-card">
         <img src=<%= @event.img_url %> class="card-img-top" alt="event image" />
         <div class="card-body">
           <h5 class="card-title text-orange">
