@@ -33,7 +33,6 @@
 	<% if @hosting.count!=0 || @attending.count!=0 %>
 
 	<div class="row my-5">
-		<div class="card-deck">
 			<% @hosting.each do |event|%>
 			<div class="col-xl-3 col-lg-4 col-md-6">
 				<%= render :partial => '/events/dashboard_event_card', locals: { event: event} %>
@@ -44,8 +43,6 @@
 				<%= render :partial => '/events/dashboard_event_card', locals: { event: event} %>
 			</div>
 			<% end %>
-		</div>
-
 	</div>
 	<% else %>
 	<p class="my-5">No events available.</p>
