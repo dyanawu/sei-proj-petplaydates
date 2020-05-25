@@ -33,27 +33,23 @@ require 'action_view'
   end
 
   def start_datetime
-    self.start_time.getlocal.strftime("%d %B %Y, %I:%M %p")
-  end
-
-  def end_datetime
-    self.end_time.getlocal.strftime("%d %B %Y, %I:%M %p")
+    self.start_time.localtime.strftime("%d %B, %I:%M %p")
   end
 
   def start_date_str
-    self.start_time.getlocal.strftime("%d %B %Y")
+    self.start_time.localtime.strftime("%d %B %Y")
   end
 
   def start_time_str
-    self.start_time.getlocal.strftime("%I:%M %p")
+    self.start_time.localtime.strftime("%I:%M %p")
   end
 
   def end_date_str
-    self.end_time.getlocal.strftime("%d %B %Y")
+    self.end_time.localtime.strftime("%d %B %Y")
   end
 
   def end_time_str
-    self.end_time.getlocal.strftime("%I:%M %p")
+    self.end_time.localtime.strftime("%I:%M %p")
   end
 
   def self.today
@@ -69,7 +65,9 @@ require 'action_view'
   end
 
   def self.recent
-    self.order(id: :desc).limit(15)
+    self.where(
+      "start_time > ?", Time.now)
+      .order(id: :desc).limit(15)
   end
 
   validate :end_after_start
