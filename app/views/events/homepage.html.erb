@@ -42,7 +42,7 @@
 <%= render :partial => 'event_header', locals: { header: "Happening today" } %>
 
 <% if @events.today.length == 0 %>
-<p class="my-5 h4">There aren't any events happening today. Why not <%= link_to 'start one', new_event_path %>?</p>
+<p class="my-5 h4">There aren't any events happening today. Why not <%= link_to 'start one?', new_event_path %></p>
 <% else %>
 <div class="my-5 owl-carousel owl-theme">
 
@@ -59,7 +59,7 @@
 <%= render :partial => 'event_header', locals: { header: "Upcoming Events" } %>
 
 <% if @events.upcoming.length == 0 %>
-<p>There aren't any events happening this week. <%= link_to 'Brighten up our week', new_event_path %>?</p>
+<p>There aren't any events happening this week. <%= link_to 'Brighten up our week?', new_event_path %></p>
 <% else %>
 <div class="my-5 owl-carousel owl-theme">
 <% @events.upcoming.each do |event| %>
@@ -76,7 +76,7 @@
 <div class="my-5 owl-carousel owl-theme">
 
 <% if @events.upcoming.length == 0 %>
-<p>No one's added any events yet. <%= link_to 'Be the first', new_event_path %>!</p>
+<p>No one's added any events yet. <%= link_to 'Be the first!', new_event_path %></p>
 <% else %>
 <% @events.recent.each do |event| %>
 <div class="item">
