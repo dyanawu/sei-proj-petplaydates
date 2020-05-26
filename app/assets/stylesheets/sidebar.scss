@@ -1,19 +1,23 @@
 
 .main-content {
 	box-sizing: border-box;
-	padding: 0 50px;
+	padding: 20px 50px;
 }
 
 #body-row {
 	margin-left: 0;
 	margin-right: 0;
-
 }
 
 
 #sidebar-container {
 	min-height: 100vh;
 	padding: 0;
+	@include media-breakpoint-down(sm) { 
+		min-height: 15vh;
+		font-size: 0.8rem;
+		margin-right: 30px;
+    }
 }
 
 /* Sidebar sizes when expanded and expanded */
