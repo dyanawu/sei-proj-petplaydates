@@ -5,7 +5,7 @@
     <div class="card-flag bg-dark text-white"><%=event.time_left %></div>
     <%end%>
     
-    <%= image_tag(event.img_url.nil? ? "patterns/pattern3.png" : event.img_url, :class=>"card-img-top bg-secondary") %>
+    <%= image_tag(event.img_url == "" ? "patterns/pattern3.png" : event.img_url, :class=>"card-img-top bg-secondary") %>
 
     <div class="card-body">
       <h5 class="card-title"> <%= link_to event.title, event_path(event) %> </h5>
