@@ -30,8 +30,8 @@
 }
 
 #google-button {
-  color: #315cfd;
   border: solid 1px #ced4da;
+  font-weight: bold;
 }
 
 .btn-primary {
@@ -67,7 +67,27 @@ option[value=""][disabled] {
 
 .joined-pet {
   border-radius: 50%;
-  width: 100%;
+  object-fit: cover;
+}
+
+$circle: 200px;
+
+.circles {
+  @media (max-width: 576px) {
+    min-height: $circle*0.5;
+    min-width: $circle*0.5;
+  }
+
+  // Medium devices (tablets, 768px and up)
+  @media (max-width: 768px) {
+    min-height: $circle*0.65;
+    min-width: $circle*0.65
+  }
+
+}
+
+.joined-pet:hover{
+  animation: pulse 1s infinite;
 }
 
 .rsvp-pets {

@@ -11,12 +11,13 @@
 
 
 #sidebar-container {
-	min-height: 100vh;
 	padding: 0;
 	@media (max-width: 576px) {
-		min-height: 15vh;
 		font-size: 0.8rem;
-		margin-right: 30px;
+		margin: 0 30px 60px 0
+	}
+	@media (min-width: 768px) {
+		min-height: 100vh;
     }
 }
 

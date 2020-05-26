@@ -1,19 +1,15 @@
 <div class="page-header bg-orange">
-  <div class="page-header-text text-white font-weight-bold">
-    Everyone's best friends.
-  </div>
+	<div class="page-header-text text-white font-weight-bold">
+		Everyone's best friends.
+	</div>
 </div>
 <div class="container">
-<div class="row">
-<div class="col">
-  <div class="row card-deck">
-    <% @pets.each do |pet| %>
-      <div class="col-sm-3 mr-0 mb-5">
-        <% popupText = "#{pet.name} the #{pet.species.name}" %>
-        <%= link_to image_tag(pet.dp_url, :class => "joined-pet", :action => "pet image", :title => popupText), pet_path(pet) %>
-      </div>
-    <% end %>
-  </div>
-</div>
-</div>
+	<div class="row">
+		<% @pets.each do |pet| %>
+		<div class="col-lg-2 col-md-3 col-sm-4 col-4 mb-5 text-center">
+			<% popupText = "#{pet.name} the #{pet.species.name}" %>
+			<%= link_to image_tag(pet.dp_url, :class => "circles joined-pet img-fluid", :action => "pet image", :title => popupText), pet_path(pet) %>
+		</div>
+		<% end %>
+	</div>
 </div>
