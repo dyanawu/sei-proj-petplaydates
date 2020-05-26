@@ -31,3 +31,12 @@
 
 en:
   hello: "Hello world"
+  activerecord:
+    attributes:
+      pet:
+        dp_url: "Pet image"
+    errors:
+      models:
+        pet:
+          dp_url:
+            blank: "is required"
