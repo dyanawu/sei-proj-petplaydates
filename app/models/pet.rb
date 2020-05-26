@@ -1,3 +1,4 @@
+# coding: utf-8
 class Pet < ApplicationRecord
       belongs_to :species
       has_and_belongs_to_many :events
@@ -16,9 +17,9 @@ class Pet < ApplicationRecord
       end
 
       def gender_symbol
-        if self.gender="f"
+        if self.gender == "f"
           "♀︎"
-        elsif self.gender="m"
+        elsif self.gender == "m"
           "♂︎"
         end
       end
