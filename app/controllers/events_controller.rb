@@ -23,10 +23,9 @@ class EventsController < ApplicationController
   end
 
   def homepage
-    @events = Event.order(id: :desc)
-    @events_today = Event.today
-    @events_upcoming = Event.upcoming
-    @events_recent = Event.recent
+    @events_today = Event.today.includes(:user, :pets)
+    @events_upcoming = Event.upcoming.includes(:user, :pets)
+    @events_recent = Event.recent.includes(:user, :pets)
   end
 
   # GET /events/1
