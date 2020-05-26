@@ -10,7 +10,11 @@
     <% @users.each do |user| %>
       <div class="col-sm-3 mr-0 mb-5">
         <% popupText = "@#{user.username}" %>
-        <%= link_to image_tag(user.profile.dp_url, :class => "joined-pet", :action => "pet image", :title => popupText), user_path(user) %>
+        <% if user.profile.dp_url.empty? %>
+          <%= link_to image_tag("patterns/user-pic.png", :class => "joined-pet bg-orange", :action => "pet image", :title => popupText), user_path(user) %>
+        <% else %>
+          <%= link_to image_tag(user.profile.dp_url, :class => "joined-pet", :action => "pet image", :title => popupText), user_path(user) %>
+        <% end %>
       </div>
     <% end %>
   </div>
