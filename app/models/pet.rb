@@ -29,9 +29,9 @@ class Pet < ApplicationRecord
       end
 
       def gender_symbol
-        if self.gender="f"
+        if self.gender == "f"
           "♀︎"
-        elsif self.gender="m"
+        elsif self.gender == "m"
           "♂︎"
         end
       end
