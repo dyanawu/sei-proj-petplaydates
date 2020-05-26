@@ -64,7 +64,7 @@
   margin-bottom: 5vh;
   padding: 2% 7%;
   text-align: center;
-  background-image: url("patterns/pattern3.png");
+  background-image: url(/assets/patterns/pattern3.png);
 }
 
 /* line 11, app/assets/stylesheets/headers.scss */
