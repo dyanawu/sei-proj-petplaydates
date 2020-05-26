@@ -1,23 +1,18 @@
 <div class="page-header bg-orange">
-  <div class="page-header-text text-white font-weight-bold">
-    Cool people. Like you.
-  </div>
+	<div class="page-header-text text-white font-weight-bold">
+		Cool people. Like you.
+	</div>
 </div>
 <div class="container">
-<div class="row">
-<div class="col">
-  <div class="row card-deck">
-    <% @users.each do |user| %>
-      <div class="col-sm-3 mr-0 mb-5">
-        <% popupText = "@#{user.username}" %>
+	<div class="row">
+		<% @users.each do |user| %>
+		<div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 text-center">
+			<% popupText = "@#{user.username}" %>
         <% if user.profile.dp_url.empty? %>
-          <%= link_to image_tag("patterns/user-pic.png", :class => "joined-pet bg-orange", :action => "pet image", :title => popupText), user_path(user) %>
+          <%= link_to image_tag("patterns/user-pic.png", :class => "circles joined-pet img-fluid bg-orange", :action => "pet image", :title => popupText), user_path(user) %>
         <% else %>
-          <%= link_to image_tag(user.profile.dp_url, :class => "joined-pet", :action => "pet image", :title => popupText), user_path(user) %>
-        <% end %>
-      </div>
-    <% end %>
-  </div>
-</div>
-</div>
+          <%= link_to image_tag(user.profile.dp_url, :class => "circles joined-pet img-fluid", :action => "pet image", :title => popupText), user_path(user) %>
+        <% end %>		</div>
+		<% end %>
+	</div>
 </div>

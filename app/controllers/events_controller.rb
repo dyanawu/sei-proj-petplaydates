@@ -9,6 +9,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
+    @types = Type.all 
     if params[:filter]
       @filter = Type.find(params[:filter].to_i).name
       @events = Event.where("type_id = ?", params[:filter].to_i).includes(:user, :pets)
