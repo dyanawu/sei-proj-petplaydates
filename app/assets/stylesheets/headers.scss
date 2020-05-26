@@ -25,6 +25,11 @@
 	height: 95vh;
 	padding: 5vh 10% 0 10%;
 	background-color: $orange;
+	background-image: image_url("index/main-header.png");
+	background-size: cover;
+	background-position: center; /* Center the image */
+	background-repeat: no-repeat; /* Do not repeat the image */
+
 
 	.header {
 		position: relative;
@@ -41,6 +46,10 @@
 		font-size: 6rem;
 		font-weight: bolder;
 		letter-spacing: 1px;
+		@media (max-width: 768px) {
+			font-size: 3rem;
+		 }
+
 	}
 
 	p {

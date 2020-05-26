@@ -1,37 +1,19 @@
-
-
 <div id="welcome-header" class="row">
 
-<div class="col-md-6 text-white">
+	<div class="col-6 text-white">
 
-  <div class="header">
+		<div class="header">
 
-  <div class="header-text">
-    <h1>PAWDATES</h1>
-    <p class="sub-header">forming 
-    <span class="text-red">pawsitive</span>
-     connections.</p>
-  </div>
-      <a href="#events"><button class="header-btn btn btn-lg btn-dark">Find events now →</button>
-</a>
+			<div class="header-text">
+				<h1>PAWDATES</h1>
+				<p class="sub-header">forming
+					<span class="text-red">pawsitive</span>
+					connections.</p>
+			</div>
+			<a href="#events"><button class="header-btn btn btn-lg btn-dark">Find events now →</button></a>
+		</div>
 
-  </div>
-
-  </div>
-
-  <div class="col-md-6">
-  <div id="animals">
-    <div id="dog">
-    <%= image_tag "index/dog-header.png"%>
-    </div>
-    <div id="cat">
-    <%= image_tag "index/cat-header1.png"%>
-    </div>
-  </div>
-  </div>
-
-
-
+	</div>
 
 </div>
 
@@ -39,52 +21,52 @@
 
 <div id="events" class="container-fluid padding-main">
 
-<%= render :partial => 'event_header', locals: { header: "Happening today" } %>
+	<%= render :partial => 'event_header', locals: { header: "Happening today" } %>
 
-<% if @events_today.length == 0 %>
-<p class="my-5 h4">There aren't any events happening today. Why not <%= link_to 'start one?', new_event_path %></p>
-<% else %>
-<div class="my-5 owl-carousel owl-theme">
+	<% if @events_today.length == 0 %>
+	<p class="my-5 h4">There aren't any events happening today. Why not <%= link_to 'start one?', new_event_path %></p>
+	<% else %>
+	<div class="my-5 owl-carousel owl-theme">
 
-<% @events_today.each do |event| %>
-<div class="item">
-<%= render :partial => 'event_card', locals: { event: event } %>
+		<% @events_today.each do |event| %>
+		<div class="item">
+			<%= render :partial => 'event_card', locals: { event: event } %>
 
-</div>
-<% end %>
-</div>
-<% end %>
-
-
-<%= render :partial => 'event_header', locals: { header: "Upcoming Events" } %>
-
-<% if @events_upcoming.length == 0 %>
-<p>There aren't any events happening this week. <%= link_to 'Brighten up our week?', new_event_path %></p>
-<% else %>
-<div class="my-5 owl-carousel owl-theme">
-<% @events_upcoming.each do |event| %>
-<div class="item">
-<%= render :partial => 'event_card', locals: { event: event } %>
-</div>
-<% end %>
-</div>
-<% end %>
-
-<%= render :partial => 'event_header', locals: { header: "Recently Added" } %>
+		</div>
+		<% end %>
+	</div>
+	<% end %>
 
 
-<div class="my-5 owl-carousel owl-theme">
+	<%= render :partial => 'event_header', locals: { header: "Upcoming Events" } %>
 
-<% if @events_recent.length == 0 %>
-<p>No one's added any events yet. <%= link_to 'Be the first!', new_event_path %></p>
-<% else %>
-<% @events_recent.each do |event| %>
-<div class="item">
-<%= render :partial => 'event_card', locals: { event: event } %>
-</div>
-<% end %>
-</div>
-<% end %>
+	<% if @events_upcoming.length == 0 %>
+	<p>There aren't any events happening this week. <%= link_to 'Brighten up our week?', new_event_path %></p>
+	<% else %>
+	<div class="my-5 owl-carousel owl-theme">
+		<% @events_upcoming.each do |event| %>
+		<div class="item">
+			<%= render :partial => 'event_card', locals: { event: event } %>
+		</div>
+		<% end %>
+	</div>
+	<% end %>
+
+	<%= render :partial => 'event_header', locals: { header: "Recently Added" } %>
+
+
+	<div class="my-5 owl-carousel owl-theme">
+
+		<% if @events_recent.length == 0 %>
+		<p>No one's added any events yet. <%= link_to 'Be the first!', new_event_path %></p>
+		<% else %>
+		<% @events_recent.each do |event| %>
+		<div class="item">
+			<%= render :partial => 'event_card', locals: { event: event } %>
+		</div>
+		<% end %>
+	</div>
+	<% end %>
 
 
 </div>
