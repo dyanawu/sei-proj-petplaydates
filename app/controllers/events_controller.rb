@@ -111,7 +111,6 @@ class EventsController < ApplicationController
       cloudinary_file = Cloudinary::Uploader.upload(uploaded_file)
       @event.img_url = cloudinary_file['url']
     else
-    else
       puts "NO IMAGE HERE =========================================================================="
       @event.img_url = ""
     end
