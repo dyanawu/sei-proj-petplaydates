@@ -38,8 +38,13 @@
 
 
 	<div class="col-lg-9 col-md-8 main-content">
+		<% if @user.profile.name == nil %>
+		<% name = @user.username %>
+		<% else %>
+		<% name = @user.profile.name %>
+		<% end %>
 
-		<h2 class="mb-3 highlight"><%= @user.profile.name %>'s Pets</h2>
+		<h2 class="mb-3 highlight"><%= name %>'s Pets</h2>
 
 		<% if @user.pets.count!=0 %>
 		<div class="row card-deck">
@@ -53,7 +58,7 @@
 		<p><%= @user.username %> has no pets.</p>
 		<% end %>
 
-		<h2 class="my-3 highlight"><%= @user.username %>'s Upcoming Events</h2>
+		<h2 class="my-3 highlight"><%= name %>'s Upcoming Events</h2>
 
 		<% if @user.events.count!=0 %>
 		<div class="row card-deck">
@@ -67,7 +72,7 @@
 		<% else %>
 		<p><%= @user.username %> has no upcoming events.</p>
 		<% end %>
-		<h2 class="my-3 highlight"><%= @user.profile.name %>'s Past Events</h2>
+		<h2 class="my-3 highlight"><%= name %>'s Past Events</h2>
 
 		<% if @user.events.count!=0 %>
 		<div class="row card-deck">
