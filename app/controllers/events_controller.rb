@@ -116,7 +116,8 @@ class EventsController < ApplicationController
       if @event.update(event_params)
         @event.start_time = parse_time_to_singapore(@event.start_time)
         @event.end_time = parse_time_to_singapore(@event.end_time)
-        puts @event
+        @event.update(start_time: @event.start_time)
+        @event.update(end_time: @event.end_time)
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
         format.json { render :show, status: :ok, location: @event }
       else
