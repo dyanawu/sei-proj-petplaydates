@@ -104,7 +104,6 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1.json
   def update
     @types = Type.all
-    @event = parse_event_to_local_time(@event)
     if params[:event][:img_url] != ""
       uploaded_file = params[:event][:img_url].path
       cloudinary_file = Cloudinary::Uploader.upload(uploaded_file)
@@ -115,6 +114,9 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.update(event_params)
+        @event.start_time = parse_time_to_singapore(@event.start_time)
+        @event.end_time = parse_time_to_singapore(@event.end_time)
+        @event.update(start_time: @event.start_time, end_time: @event.end_time)
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
         format.json { render :show, status: :ok, location: @event }
       else
