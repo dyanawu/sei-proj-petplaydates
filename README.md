@@ -7,6 +7,7 @@
 - [Owl Carousel](https://github.com/OwlCarousel2/OwlCarousel2)
 - [Simple Calendar](https://github.com/excid3/simple_calendar)
 - [Cloudinary](https://cloudinary.com/)
+- [Google Places API](https://developers.google.com/places/web-service/intro)
 
 ## Approach
 First, we discussed basic features and collaborated on an ERD/wireframe, then implemented a simple version of the app with unstyled information on each page. As we worked deeper into the domain, we iterated towards the final format and design.
