@@ -38,14 +38,16 @@ puts
 ## Fake Pets for random users
 36.times do
 
-  pet = Pet.create(name: Faker::Name.first_name, species_id: rand(1..2), birthday: "#{rand(1990..2019)}-#{rand(1..12)}-#{rand(1-28)}", bio: Faker::Lorem.paragraph, gender: Faker::Gender.short_binary_type, user_id: rand(User.first.id..User.last.id))
-  if pet.species_id == 1
-    pet.update(dp_url: "https://loremflickr.com/400/400/puppy?lock=#{pet.id}")
-  else
-    pet.update(dp_url: "https://loremflickr.com/400/400/kitten?lock=#{pet.id}")
-  end
+    pet = Pet.create(name: Faker::Name.first_name, dp_url: "placeholder", species_id: rand(1..2), birthday: "#{rand(1990..2019)}-#{rand(1..12)}-#{rand(1..28)}", bio: Faker::Lorem.paragraph, gender: Faker::Gender.short_binary_type, user_id: rand(User.first.id..User.last.id))
+    puts "#{pet.id} Created #{pet.name} the #{pet.species.name} (#{pet.gender}) belonging to #{pet.user.username} (user id: #{pet.user.id})"
 
-  puts "Created #{pet.name} the #{pet.species.name} (#{pet.gender}) belonging to #{pet.user.username} (user id: #{pet.user.id})"
+    if pet.species_id == 1
+        pet.update(dp_url: "https://loremflickr.com/400/400/puppy?lock=#{pet.id}")
+    else
+        pet.update(dp_url: "https://loremflickr.com/400/400/kitten?lock=#{pet.id}")
+    end
+    puts pet.dp_url
+
 end
 
 25.times{print"-"}
