@@ -39,6 +39,13 @@ body {
 	padding-top: 76px;
 }
 
+.sticky-top {
+
+	@media (max-width: 576px) {
+		position: relative;
+	}
+}
+
 .sticky-offset {
 	top: 96px;
 }

@@ -48,10 +48,10 @@
     <div class="row card-deck">
       <% if @event.pets.count != 0 %>
         <% @event.pets.each do |pet| %>
-          <div class="col-sm-3 mr-0 mb-3">
+		    <div class="col-lg-2 col-md-3 col-sm-4 col-6 mb-5 text-center">
             <% owner = User.find(pet.user_id).username %>
             <% popupText = "#{pet.name.capitalize} the #{pet.species.name} with @#{owner}" %>
-            <%= link_to image_tag(pet.dp_url, :class => "joined-pet", :action => "pet image", :title => popupText), pet_path(pet) %>
+            <%= link_to image_tag(pet.dp_url, :class => "circles joined-pet img-fluid", :action => "pet image", :title => popupText), pet_path(pet) %>
           </div>
         <%end %>
       <% else %>
