@@ -37,7 +37,7 @@
 								<label for="filter">Filter by</label>
 							</div>
 							<div class="col-8">
-								<%= select_tag "filter", options_from_collection_for_select(Type.all, "id", "name"), :class=>"form-control"%>
+								<%= select_tag "filter", options_for_select(@types.collect{ |u| [u.name.capitalize, u.id] }), :class=>"form-control"%>
 							</div>
 						</div>
 
