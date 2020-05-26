@@ -8,7 +8,7 @@
 	background-image: image_url("patterns/pattern3.png");
 	font-size: 3rem;
 
-	@include media-breakpoint-down(sm) { 
+	@media (max-width: 576px) {
 		height: 15vh;
 		font-size: 1.3rem;
 		
