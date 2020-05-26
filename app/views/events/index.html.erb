@@ -19,7 +19,7 @@
                 <td>
                   <select name="sort" id="">
                     <option value="recent">Recent</option>
-                    <option value="recent">Oldest</option>
+                    <option value="oldest">Oldest</option>
                   </select>
                 </td>
               </tr>
@@ -31,7 +31,7 @@
               <tr>
                 <td>Event Type</td>
                 <td>
-                  <%= select("filter", "event_type", Type.all.collect {|t| [ t.name, t.id ] }) %>
+                  <%= select("filter", "type_id", Type.all.collect {|t| [ t.name.capitalize, t.id ] }) %>
                 </td>
               </tr>
 
@@ -47,13 +47,21 @@
   </div>
 
   <div class="col-lg-9 col-md-8 main-content">
-
+    <div class="row">
+      <% if @events.length > 0 %>
+        <div class="h4 my-5 mx-auto">Showing <%= @events[0].type.name %> events</div>
+      <% else %>
+        <div class="h4 my-5">No events of this type currently! <%= link_to 'Start one?', new_event_path %></div>
+      <% end %>
+    </div>
     <div class="row card-deck">
+      <% if @events.length > 0 %>
       <% @events.each do |event| %>
 	<div class="col-xl-3 col-lg-4 col-md-6 mb-3">
 	  <%= render :partial => 'events/event_card', locals: { event: event } %>
 	</div>
 
+      <% end %>
       <% end %>
     </div>
 
