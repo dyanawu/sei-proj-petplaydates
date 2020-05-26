@@ -47,6 +47,10 @@ a {
 	color: $peach;
 }
 
+.render-animate {
+	animation: slideIn 1s;
+}
+
 a:hover {
 	color: $red;
 }
@@ -77,4 +81,8 @@ h6 {
 
 #events {
 	padding-top: 76px;
+}
+
+.pattern-bg{
+	background-image: url("patterns/pattern3.png");
 }
