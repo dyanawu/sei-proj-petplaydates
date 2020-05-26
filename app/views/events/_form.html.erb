@@ -36,7 +36,7 @@
       <div class="field">
         <%= form.label :start_time, "Start Time", class:"form-label" %>
         <div class="form-inline">
-          <span><%= form.datetime_select :start_time, {  selected: rounded_t, order: [:day, :month, :year] }, {class: "form-control", :required => true}%></span>
+          <span><%= form.datetime_select :start_time, {  selected: rounded_s_t, order: [:day, :month, :year] }, {class: "form-control", :required => true}%></span>
         </div>
       </div>
     </div>
@@ -44,7 +44,7 @@
       <div class="field">
         <%= form.label :end_time, "End Time", class:"form-label" %>
         <div class="form-inline">
-          <span><%= form.datetime_select :end_time, {selected: rounded_t, order: [:day, :month, :year] }, { class: "form-control", :required => true }%></span>
+          <span><%= form.datetime_select :end_time, {selected: rounded_e_t, order: [:day, :month, :year] }, { class: "form-control", :required => true }%></span>
         </div>
       </div>
     </div>
