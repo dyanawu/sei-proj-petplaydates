@@ -29,12 +29,13 @@
   </div>
   <div class="row">
     <% t = Time.now + 1.day %>
-    <% rounded_t = Time.local(t.year, t.month, t.day, t.hour, t.min/15*15) %>
+    <% rounded_s_t = Time.local(t.year, t.month, t.day, t.hour, t.min/15*15) %>
+    <% rounded_e_t = Time.local(t.year, t.month, t.day, t.hour, t.min/15*15 + 30) %>
     <div class="col-6">
       <div class="field">
         <%= form.label :start_time, "Start Time", class:"form-label" %>
         <div class="form-inline">
-          <span><%= form.datetime_select :start_time, {  selected: rounded_t, order: [:day, :month, :year] }, {class: "form-control", :required => true}%></span>
+          <span><%= form.datetime_select :start_time, {  selected: rounded_s_t, order: [:day, :month, :year] }, {class: "form-control", :required => true}%></span>
         </div>
       </div>
     </div>
@@ -42,7 +43,7 @@
       <div class="field">
         <%= form.label :end_time, "End Time", class:"form-label" %>
         <div class="form-inline">
-          <span><%= form.datetime_select :end_time, {selected: rounded_t, order: [:day, :month, :year] }, { class: "form-control", :required => true }%></span>
+          <span><%= form.datetime_select :end_time, {selected: rounded_e_t, order: [:day, :month, :year] }, { class: "form-control", :required => true }%></span>
         </div>
       </div>
     </div>
