@@ -32,9 +32,13 @@ class PetsController < ApplicationController
     @pet.user = current_user
     @pet.gender = params[:gender]
 
-    uploaded_file = params[:pet][:dp_url].path
-    cloudinary_file = Cloudinary::Uploader.upload(uploaded_file)
-    @pet.dp_url = cloudinary_file['url']
+    if @pet.update(pet_params)
+      uploaded_file = params[:pet][:dp_url].path
+      cloudinary_file = Cloudinary::Uploader.upload(uploaded_file)
+      @pet.dp_url = cloudinary_file['url']
+    else
+      @pet.dp_url = ""
+    end
 
     respond_to do |format|
       if @pet.save
