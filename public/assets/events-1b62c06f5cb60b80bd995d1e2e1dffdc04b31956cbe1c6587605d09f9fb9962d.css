@@ -30,8 +30,8 @@
 
 /* line 32, app/assets/stylesheets/events.scss */
 #google-button {
-  color: #315cfd;
   border: solid 1px #ced4da;
+  font-weight: bold;
 }
 
 /* line 37, app/assets/stylesheets/events.scss */
@@ -72,38 +72,61 @@ option[value=""][disabled] {
 /* line 68, app/assets/stylesheets/events.scss */
 .joined-pet {
   border-radius: 50%;
-  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
-/* line 73, app/assets/stylesheets/events.scss */
+@media (max-width: 576px) {
+  /* line 75, app/assets/stylesheets/events.scss */
+  .circles {
+    min-height: 100px;
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* line 75, app/assets/stylesheets/events.scss */
+  .circles {
+    min-height: 130px;
+    min-width: 130px;
+  }
+}
+
+/* line 89, app/assets/stylesheets/events.scss */
+.joined-pet:hover {
+  -webkit-animation: pulse 1s infinite;
+          animation: pulse 1s infinite;
+}
+
+/* line 93, app/assets/stylesheets/events.scss */
 .rsvp-pets {
   position: relative;
   max-width: 300px;
 }
 
-/* line 77, app/assets/stylesheets/events.scss */
+/* line 97, app/assets/stylesheets/events.scss */
 .rsvp-pets label {
   margin: 0;
 }
 
-/* line 80, app/assets/stylesheets/events.scss */
+/* line 100, app/assets/stylesheets/events.scss */
 .rsvp-pets input {
   visibility: hidden;
   position: absolute;
 }
 
-/* line 85, app/assets/stylesheets/events.scss */
+/* line 105, app/assets/stylesheets/events.scss */
 .rsvp-pets .one-pet {
   cursor: pointer;
   border: 2px solid transparent;
 }
 
-/* line 90, app/assets/stylesheets/events.scss */
+/* line 110, app/assets/stylesheets/events.scss */
 .rsvp-pets input:checked + .one-pet {
   border: 2px solid #ff6600;
 }
 
-/* line 94, app/assets/stylesheets/events.scss */
+/* line 114, app/assets/stylesheets/events.scss */
 .rsvp-pets .one-pet:hover {
   border: 2px solid #ff6600;
 }

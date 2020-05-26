@@ -12,70 +12,75 @@
 
 /* line 13, app/assets/stylesheets/sidebar.scss */
 #sidebar-container {
-  min-height: 100vh;
   padding: 0;
 }
 
 @media (max-width: 576px) {
   /* line 13, app/assets/stylesheets/sidebar.scss */
   #sidebar-container {
-    min-height: 15vh;
     font-size: 0.8rem;
-    margin-right: 30px;
+    margin: 0 30px 60px 0;
+  }
+}
+
+@media (min-width: 768px) {
+  /* line 13, app/assets/stylesheets/sidebar.scss */
+  #sidebar-container {
+    min-height: 100vh;
   }
 }
 
 /* Sidebar sizes when expanded and expanded */
-/* line 24, app/assets/stylesheets/sidebar.scss */
+/* line 25, app/assets/stylesheets/sidebar.scss */
 .sidebar-expanded {
   width: 230px;
 }
 
-/* line 28, app/assets/stylesheets/sidebar.scss */
+/* line 29, app/assets/stylesheets/sidebar.scss */
 .sidebar-collapsed {
   width: 60px;
 }
 
 /* Menu item*/
-/* line 33, app/assets/stylesheets/sidebar.scss */
+/* line 34, app/assets/stylesheets/sidebar.scss */
 #sidebar-container .list-group a {
   height: 50px;
   color: white;
 }
 
 /* Submenu item*/
-/* line 39, app/assets/stylesheets/sidebar.scss */
+/* line 40, app/assets/stylesheets/sidebar.scss */
 #sidebar-container .list-group .sidebar-submenu a {
   height: 45px;
   padding-left: 30px;
 }
 
-/* line 44, app/assets/stylesheets/sidebar.scss */
+/* line 45, app/assets/stylesheets/sidebar.scss */
 .sidebar-submenu {
   font-size: 0.9rem;
 }
 
 /* Separators */
-/* line 49, app/assets/stylesheets/sidebar.scss */
+/* line 50, app/assets/stylesheets/sidebar.scss */
 .sidebar-separator-title {
   background-color: #333;
   height: 35px;
 }
 
-/* line 54, app/assets/stylesheets/sidebar.scss */
+/* line 55, app/assets/stylesheets/sidebar.scss */
 .sidebar-separator {
   background-color: #333;
   height: 25px;
 }
 
-/* line 59, app/assets/stylesheets/sidebar.scss */
+/* line 60, app/assets/stylesheets/sidebar.scss */
 .logo-separator {
   background-color: #333;
   height: 60px;
 }
 
 /* Closed submenu icon */
-/* line 65, app/assets/stylesheets/sidebar.scss */
+/* line 66, app/assets/stylesheets/sidebar.scss */
 #sidebar-container .list-group .list-group-item[aria-expanded="false"] .submenu-icon::after {
   content: " \f0d7";
   font-family: FontAwesome;
@@ -85,7 +90,7 @@
 }
 
 /* Opened submenu icon */
-/* line 74, app/assets/stylesheets/sidebar.scss */
+/* line 75, app/assets/stylesheets/sidebar.scss */
 #sidebar-container .list-group .list-group-item[aria-expanded="true"] .submenu-icon::after {
   content: " \f0da";
   font-family: FontAwesome;
@@ -94,13 +99,13 @@
   padding-left: 10px;
 }
 
-/* line 82, app/assets/stylesheets/sidebar.scss */
+/* line 83, app/assets/stylesheets/sidebar.scss */
 .search-sidebar-container {
   border: 1px solid grey;
   margin-left: 20px;
 }
 
-/* line 87, app/assets/stylesheets/sidebar.scss */
+/* line 88, app/assets/stylesheets/sidebar.scss */
 .search td {
   text-align: left;
 }
