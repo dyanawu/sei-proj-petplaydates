@@ -1,4 +1,4 @@
-/* line 7, app/assets/stylesheets/events.scss */
+/* line 6, app/assets/stylesheets/events.scss */
 .form-header {
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -8,7 +8,7 @@
   margin-bottom: 10px;
 }
 
-/* line 16, app/assets/stylesheets/events.scss */
+/* line 15, app/assets/stylesheets/events.scss */
 .form-label {
   font-size: 15px;
   margin-bottom: 2px;
@@ -17,8 +17,9 @@
   color: #2d2d2d;
 }
 
-/* line 24, app/assets/stylesheets/events.scss */
-.form-control, .input-group {
+/* line 23, app/assets/stylesheets/events.scss */
+.form-control,
+.input-group {
   margin-bottom: 5px;
 }
 
@@ -30,7 +31,7 @@
 /* line 32, app/assets/stylesheets/events.scss */
 #google-button {
   color: #315cfd;
-  border: solid 1px #CED4DA;
+  border: solid 1px #ced4da;
 }
 
 /* line 37, app/assets/stylesheets/events.scss */
@@ -68,11 +69,10 @@ option[value=""][disabled] {
   display: none;
 }
 
-/* line 67, app/assets/stylesheets/events.scss */
+/* line 68, app/assets/stylesheets/events.scss */
 .joined-pet {
   border-radius: 50%;
-  height: 250px;
-  width: 250px;
+  width: 100%;
 }
 
 /* line 73, app/assets/stylesheets/events.scss */

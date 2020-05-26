@@ -60,49 +60,63 @@
 
 /* line 3, app/assets/stylesheets/headers.scss */
 .page-header {
-  min-height: 35vh;
+  height: 35vh;
   margin-bottom: 5vh;
   padding: 2% 7%;
   text-align: center;
   background-image: url(/assets/patterns/pattern3.png);
+  font-size: 3rem;
 }
 
-/* line 11, app/assets/stylesheets/headers.scss */
+@media (max-width: 576px) {
+  /* line 3, app/assets/stylesheets/headers.scss */
+  .page-header {
+    height: 15vh;
+    font-size: 1.3rem;
+  }
+}
+
+/* line 18, app/assets/stylesheets/headers.scss */
 .page-header-text {
   width: 50%;
-  font-size: 3rem;
   margin: 5% auto;
   -webkit-animation: zoomIn 1s;
           animation: zoomIn 1s;
 }
 
-/* line 19, app/assets/stylesheets/headers.scss */
+/* line 25, app/assets/stylesheets/headers.scss */
 .header-btn {
   -webkit-animation: headShake 2s infinite;
           animation: headShake 2s infinite;
 }
 
-/* line 23, app/assets/stylesheets/headers.scss */
+/* line 29, app/assets/stylesheets/headers.scss */
 #welcome-header {
   width: 100vw;
   height: 95vh;
   padding: 5vh 10% 0 10%;
   background-color: #ff8800;
+  background-image: url(/assets/index/main-header.png);
+  background-size: cover;
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
 }
 
-/* line 29, app/assets/stylesheets/headers.scss */
+/* line 40, app/assets/stylesheets/headers.scss */
 #welcome-header .header {
   position: relative;
   top: 30%;
   margin-bottom: 1rem;
 }
 
-/* line 35, app/assets/stylesheets/headers.scss */
+/* line 46, app/assets/stylesheets/headers.scss */
 #welcome-header .header-text {
   margin-bottom: 3rem;
 }
 
-/* line 39, app/assets/stylesheets/headers.scss */
+/* line 50, app/assets/stylesheets/headers.scss */
 #welcome-header h1 {
   color: white;
   font-size: 6rem;
@@ -110,36 +124,43 @@
   letter-spacing: 1px;
 }
 
-/* line 46, app/assets/stylesheets/headers.scss */
+@media (max-width: 768px) {
+  /* line 50, app/assets/stylesheets/headers.scss */
+  #welcome-header h1 {
+    font-size: 3rem;
+  }
+}
+
+/* line 61, app/assets/stylesheets/headers.scss */
 #welcome-header p {
   font-size: 2rem;
   letter-spacing: 2px;
 }
 
-/* line 51, app/assets/stylesheets/headers.scss */
+/* line 66, app/assets/stylesheets/headers.scss */
 #welcome-header #animals {
   top: 100px;
 }
 
-/* line 55, app/assets/stylesheets/headers.scss */
+/* line 70, app/assets/stylesheets/headers.scss */
 #welcome-header #dog {
   position: absolute;
   left: 10%;
   z-index: 1;
 }
 
-/* line 60, app/assets/stylesheets/headers.scss */
+/* line 75, app/assets/stylesheets/headers.scss */
 #welcome-header #dog img {
   width: 80%;
 }
 
-/* line 65, app/assets/stylesheets/headers.scss */
+/* line 80, app/assets/stylesheets/headers.scss */
 #welcome-header #cat {
   position: absolute;
   left: 40%;
 }
 
-/* line 69, app/assets/stylesheets/headers.scss */
+/* line 84, app/assets/stylesheets/headers.scss */
 #welcome-header #cat img {
   width: 80%;
 }
