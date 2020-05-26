@@ -2,7 +2,6 @@
 	<div id="sidebar-container" class="d-md-block col-lg-3 col-md-4 bg-white">
 		<div class="sticky-top sticky-offset">
 
-
 			<div class="card ml-4 shadow fixed-card">
 			<% if @user.profile.dp_url.empty? %>
 			<%= image_tag("patterns/user-pic.png", :class=>"card-img-top bg-orange") %>
@@ -16,7 +15,7 @@
 					<p>
 						<i class="fas fa-crown mr-2"></i>Events Hosted: <%=@user.events.count%>
 
-					<% if @user.profile.birthday!=""%>
+					<% if @user.profile.birthday != nil%>
 						<br><i class="fas fa-birthday-cake mr-2"></i><%= @user.profile.birthday.strftime("%d %B") %>
 					<% end %>
 					
@@ -38,7 +37,17 @@
 
 	<div class="col-lg-9 col-md-8 main-content">
 
-		<h2 class="mb-3 highlight"><%= @user.profile.name %>'s Pets</h2>
+		<% if @user.profile.name == nil %>
+			<p>Oops, you haven't updated your user profile yet. Head <%=link_to 'here', edit_profile_path %> to update your profile!<p>
+		<% end %>
+
+		<% if @user.profile.name == nil %>
+		<% name = @user.username %>
+		<% else %>
+		<% name = @user.profile.name %>
+		<% end %>
+
+		<h2 class="mb-3 highlight"><%= name %>'s Pets</h2>
 
 		<% if @user.pets.count!=0 %>
 		<div class="row card-deck">
@@ -49,10 +58,10 @@
 			<% end %>
 		</div>
 		<% else %>
-		<p><%= @user.username %> has no pets.</p>
+		<p><%= name %> has no pets.</p>
 		<% end %>
 
-		<h2 class="my-3 highlight"><%= @user.username %>'s Upcoming Events</h2>
+		<h2 class="my-3 highlight"><%= name %>'s Upcoming Events</h2>
 
 		<% if @user.events.count!=0 %>
 		<div class="row card-deck">
@@ -64,9 +73,9 @@
 			<% end %>
 		</div>
 		<% else %>
-		<p><%= @user.username %> has no upcoming events.</p>
+		<p><%= name %> has no upcoming events.</p>
 		<% end %>
-		<h2 class="my-3 highlight"><%= @user.profile.name %>'s Past Events</h2>
+		<h2 class="my-3 highlight"><%= name %>'s Past Events</h2>
 
 		<% if @user.events.count!=0 %>
 		<div class="row card-deck">
@@ -78,7 +87,7 @@
 			<% end %>
 		</div>
 		<% else %>
-		<p><%= @user.username %> has no past events.</p>
+		<p><%= name %> has no past events.</p>
 		<% end %>
 
 
