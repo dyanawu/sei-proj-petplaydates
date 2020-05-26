@@ -82,7 +82,7 @@ class EventsController < ApplicationController
     @event = parse_event_to_local_time(Event.new(event_params))
     @event.user = current_user
 
-    if params[:event][:img_url] != ""
+    if !params[:event][:img_url].nil?
       uploaded_file = params[:event][:img_url].path
       cloudinary_file = Cloudinary::Uploader.upload(uploaded_file)
       @event.img_url = cloudinary_file['url']
