@@ -12,8 +12,7 @@ class UsersController < ApplicationController
     if user_signed_in?
       @user = current_user
       @pets = current_user.pets
-      @hosting = current_user.events
-      @attending = current_user.events_attending
+      @events = current_user.events_all
     else
       redirect_to root_path
     end

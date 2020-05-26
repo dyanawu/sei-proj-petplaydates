@@ -1,50 +1,45 @@
 <div class="page-header bg-dark">
 
-	<div class="page-header-text text-white font-weight-bold">
-		Your activities at a glance.
-	</div>
+  <div class="page-header-text text-white font-weight-bold">
+    Your activities at a glance.
+  </div>
 </div>
 
 <div class="container-fluid padding-main">
 
-	<h2 class="d-inline highlight">Your Pets</h2>
-	<%= render :partial => '/components/add_btn', locals: { link: new_pet_path} %>
+  <h2 class="d-inline highlight">Your Pets</h2>
+  <%= render :partial => '/components/add_btn', locals: { link: new_pet_path} %>
 
-	<% if @pets.count!=0 %>
+  <% if @pets.count!=0 %>
 
-	<div class="row my-5">
-		<% @pets.each do |pet|%>
-		<div class="col-lg-4 col-md-6 mb-3">
-			<%= render :partial => '/pets/dashboard_pet_card', locals: { pet: pet} %>
-		</div>
-		<% end %>
+    <div class="row my-5">
+      <% @pets.each do |pet|%>
+	<div class="col-lg-4 col-md-6 mb-3">
+	  <%= render :partial => '/pets/dashboard_pet_card', locals: { pet: pet} %>
 	</div>
+      <% end %>
+    </div>
 
-	<% else %>
+  <% else %>
 
-	<p class="my-5">You do not have any pets added yet.</p>
+    <p class="my-5">You do not have any pets added yet.</p>
 
-	<%end%>
+  <%end%>
 
 
 
-	<h2 class="d-inline highlight">Your Events</h2>
-	<%= render :partial => '/components/add_btn', locals: { link: new_event_path} %>
-	<% if @hosting.count!=0 || @attending.count!=0 %>
+  <h2 class="d-inline highlight">Your Events</h2>
+  <%= render :partial => '/components/add_btn', locals: { link: new_event_path} %>
+  <% if @events.length > 0 %>
 
-	<div class="row my-5">
-			<% @hosting.each do |event|%>
-			<div class="col-xl-3 col-lg-4 col-md-6">
-				<%= render :partial => '/events/dashboard_event_card', locals: { event: event} %>
-			</div>
-			<% end %>
-			<% @attending.each do |event|%>
-			<div class="col-xl-3 col-lg-4 col-md-6">
-				<%= render :partial => '/events/dashboard_event_card', locals: { event: event} %>
-			</div>
-			<% end %>
+    <div class="row my-5">
+      <% @events.each do |event|%>
+	<div class="col-xl-3 col-lg-4 col-md-6">
+	  <%= render :partial => '/events/dashboard_event_card', locals: { event: event} %>
 	</div>
-	<% else %>
-	<p class="my-5">No events available.</p>
-	<% end %>
+      <% end %>
+    </div>
+  <% else %>
+    <p class="my-5">You're not going to or hosting any events. <%= link_to 'Start one!', new_event_path %></p>
+  <% end %>
 </div>
