@@ -2,8 +2,6 @@
 	<div id="sidebar-container" class="d-md-block col-lg-3 col-md-4 bg-white">
 		<div class="sticky-top sticky-offset">
 
-
-
 			<div class="card ml-4 shadow fixed-card">
 			<% if @user.profile.dp_url.empty? %>
 			<%= image_tag("patterns/user-pic.png", :class=>"card-img-top bg-orange") %>
@@ -38,6 +36,11 @@
 
 
 	<div class="col-lg-9 col-md-8 main-content">
+
+		<% if @user.profile.name == nil %>
+			<p>Oops, you haven't updated your user profile yet. Head <%=link_to 'here', edit_profile_path %> to update your profile!<p>
+		<% end %>
+
 		<% if @user.profile.name == nil %>
 		<% name = @user.username %>
 		<% else %>
