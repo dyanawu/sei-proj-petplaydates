@@ -2,8 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com
 
-
-//Styles for new pet and new event form 
+//Styles for new pet and new event form
 .form-header {
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -21,7 +20,8 @@
   color: #2d2d2d;
 }
 
-.form-control, .input-group {
+.form-control,
+.input-group {
   margin-bottom: 5px;
 }
 
@@ -31,7 +31,7 @@
 
 #google-button {
   color: #315cfd;
-  border: solid 1px #CED4DA;
+  border: solid 1px #ced4da;
 }
 
 .btn-primary {
@@ -64,10 +64,10 @@ option[value=""][disabled] {
 }
 
 //Styles for event/:id route
+
 .joined-pet {
   border-radius: 50%;
-  height: 250px;
-  width: 250px;
+  width: 100%;
 }
 
 .rsvp-pets {
@@ -81,16 +81,16 @@ option[value=""][disabled] {
     visibility: hidden;
     position: absolute;
   }
-  
+
   .one-pet {
     cursor: pointer;
     border: 2px solid transparent;
   }
-  
+
   input:checked + .one-pet {
     border: 2px solid #ff6600;
   }
-  
+
   .one-pet:hover {
     border: 2px solid #ff6600;
   }
