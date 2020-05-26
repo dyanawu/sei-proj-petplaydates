@@ -12599,16 +12599,22 @@ a {
 }
 
 /* line 50, app/assets/stylesheets/application.scss */
+.render-animate {
+  -webkit-animation: slideIn 1s;
+          animation: slideIn 1s;
+}
+
+/* line 54, app/assets/stylesheets/application.scss */
 a:hover {
   color: #de3f00;
 }
 
-/* line 54, app/assets/stylesheets/application.scss */
+/* line 58, app/assets/stylesheets/application.scss */
 hr {
   border-color: grey;
 }
 
-/* line 58, app/assets/stylesheets/application.scss */
+/* line 62, app/assets/stylesheets/application.scss */
 h1,
 h2,
 h3,
@@ -12619,19 +12625,24 @@ h6 {
   font-weight: 700;
 }
 
-/* line 68, app/assets/stylesheets/application.scss */
+/* line 72, app/assets/stylesheets/application.scss */
 .padding-main {
   padding: 3% 12%;
 }
 
-/* line 72, app/assets/stylesheets/application.scss */
+/* line 76, app/assets/stylesheets/application.scss */
 .highlight {
   display: inline-block;
   letter-spacing: 2px;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0) 60%, #FFD0AE 50%);
 }
 
-/* line 78, app/assets/stylesheets/application.scss */
+/* line 82, app/assets/stylesheets/application.scss */
 #events {
   padding-top: 76px;
+}
+
+/* line 86, app/assets/stylesheets/application.scss */
+.pattern-bg {
+  background-image: url("patterns/pattern3.png");
 }
