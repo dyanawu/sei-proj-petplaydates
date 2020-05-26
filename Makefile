@@ -12,8 +12,7 @@ prep:
 	git commit -m "Precompile for prod"
 	git status
 
-deploy: dbsync
-	prep
+deploy: dbsync prep
 	git push dyanawu heroku
 
 .PHONY: dbsync prep deploy
