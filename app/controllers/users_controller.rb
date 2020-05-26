@@ -12,8 +12,7 @@ class UsersController < ApplicationController
     if user_signed_in?
       @user = current_user
       @pets = current_user.pets
-      @hosting = current_user.events
-      @attending = current_user.events_attending
+      @events = current_user.events_all
     else
       redirect_to root_path
     end
@@ -32,7 +31,15 @@ class UsersController < ApplicationController
     @profile = Profile.find(current_user.profile.id)
     @user = User.find(current_user.id)
     @profile.update(profile_params)
-    redirect_to @user
+
+    uploaded_file = params[:profile][:dp_url].path
+    cloudinary_file = Cloudinary::Uploader.upload(uploaded_file)
+    @profile[:dp_url] = cloudinary_file['url']
+    if @profile.save
+      redirect_to @user
+    else
+      render 'edit_profile'
+    end
   end
 
   private

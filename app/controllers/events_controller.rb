@@ -5,7 +5,6 @@ require "net/http"
 class EventsController < ApplicationController
 
   layout "form", only: [:new, :edit]
-
   before_action :set_event, only: [:show, :edit, :update, :destroy]
   # GET /events
   # GET /events.json
@@ -23,10 +22,9 @@ class EventsController < ApplicationController
   end
 
   def homepage
-    @events = Event.order(id: :desc)
-    @events_today = Event.today
-    @events_upcoming = Event.upcoming
-    @events_recent = Event.recent
+    @events_today = Event.today.includes(:user, :pets)
+    @events_upcoming = Event.upcoming.includes(:user, :pets)
+    @events_recent = Event.recent.includes(:user, :pets)
   end
 
   # GET /events/1
@@ -66,6 +64,7 @@ class EventsController < ApplicationController
   def new
     @event = Event.new
     @types = Type.all
+
   end
 
   # GET /events/1/edit
@@ -83,6 +82,14 @@ class EventsController < ApplicationController
     @event = parse_event_to_local_time(Event.new(event_params))
     @event.user = current_user
 
+    if !params[:event][:img_url].nil?
+      uploaded_file = params[:event][:img_url].path
+      cloudinary_file = Cloudinary::Uploader.upload(uploaded_file)
+      @event.img_url = cloudinary_file['url']
+    else
+      @event.img_url = ""
+    end
+
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
@@ -97,6 +104,14 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
+    if !params[:event][:img_url].nil?
+      uploaded_file = params[:event][:img_url].path
+      cloudinary_file = Cloudinary::Uploader.upload(uploaded_file)
+      @event.img_url = cloudinary_file['url']
+    else
+      @event.img_url = ""
+    end
+
     respond_to do |format|
       if @event.update(event_params)
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
@@ -124,7 +139,7 @@ class EventsController < ApplicationController
       @event = Event.find(params[:id])
     end
 
-    def parse_event_to_local_time (event) 
+    def parse_event_to_local_time (event)
       event.start_time = parse_time_to_singapore(event.start_time)
       event.end_time = parse_time_to_singapore(event.end_time)
       event
@@ -136,6 +151,6 @@ class EventsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def event_params
-      params.require(:event).permit(:title, :description, :capacity, :location, :start_time, :end_time, :min_pets, :type_id, :pet_ids => [])
+      params.require(:event).permit(:title, :description, :capacity, :location, :start_time, :end_time, :min_pets, :img_url, :type_id, :pet_ids => [])
     end
 end

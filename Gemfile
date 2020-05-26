@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
+gem 'dotenv-rails', groups: [:development, :test]
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3'
@@ -32,6 +34,9 @@ gem 'devise'
 # bootstrap and jquery
 gem 'bootstrap', '~> 4.5.0'
 gem 'jquery-rails'
+
+# union activerecords
+gem 'active_record_union'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

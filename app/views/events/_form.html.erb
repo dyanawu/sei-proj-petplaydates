@@ -72,20 +72,11 @@
 	<div class="col-6">
 		<div class="field">
 			<%= form.label :img_url, "Image (Optional)", class:"form-label" %>
-			<%= form.text_field :img_url, class: "form-control"  %>
+			<%= form.file_field :img_url, :class=> "form-control-file" %>
 		</div>
 	</div>
 </div>
 
-<div class="row">
-      <%= form.label :img_url, "Image:" %>
-      <div class="form_controls">
-        <%= form.file_field :img_url %>
-        <%= form.hidden_field(:image_cache) %>
-      </div>
-	</div>
-
-</div>
 
 <div class="actions">
 	<%= form.submit "Create Event", class:"btn btn-primary"%>

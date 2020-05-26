@@ -37,6 +37,24 @@ class User < ApplicationRecord
 
   # returns events that the user's pets are attending
   def events_attending
-    Event.joins(:pets).where(pets: {user_id: self.id}).order(:start_time).distinct
+    Event.joins(:pets).where(pets: {user_id: self.id}).distinct.order(:start_time)
   end
+
+  # returns all events, attending or hosting
+  def events_all
+    self.events_attending.union(self.events).distinct
+  end
+
+  def events_future
+    self.events_all.where(
+      "start_time > ?", Time.now)
+      .order(start_time: :asc)
+  end
+
+  def events_past
+    self.events_all.where(
+      "end_time < ?", Time.now)
+      .order(start_time: :desc)
+  end
+
 end
