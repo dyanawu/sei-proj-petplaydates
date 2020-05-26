@@ -1,24 +1,36 @@
-# README
+# pawdates - simple, friendly pet events and meetups
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Technologies & Libraries
+- Ruby on Rails (6.0.3)
+- PostgreSQL
+- [Faker](https://github.com/faker-ruby/faker.git)
+- [Owl Carousel](https://github.com/OwlCarousel2/OwlCarousel2)
+- [Simple Calendar](https://github.com/excid3/simple_calendar)
+- [Cloudinary](https://cloudinary.com/)
 
-Things you may want to cover:
+## Approach
+First, we discussed basic features and collaborated on an ERD/wireframe, then implemented a simple version of the app with unstyled information on each page. As we worked deeper into the domain, we iterated towards the final format and design.
 
-* Ruby version
+## Install
+Fork repo, then:
+```
+git clone https://github.com/<you>/sei-proj-petplaydates
+cd sei-proj-playdates
+bundle install
+rails db:create
+rails db:schema:load
+rails db:seed
+```
+To run:
+```
+rails s
+```
+Then navigate to:
+http://localhost:3000
 
-* System dependencies
+## Design artifacts
+[ERD](https://github.com/dyanawu/sei-proj-petplaydates/blob/master/docs/pawdates_erd.png)
+[Wireframe](https://github.com/dyanawu/sei-proj-petplaydates/blob/master/docs/pawdates_wireframe.pdf)
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Unsolved problems
+- Fully responsive design
