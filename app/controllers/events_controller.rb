@@ -64,7 +64,6 @@ class EventsController < ApplicationController
   def new
     @event = Event.new
     @types = Type.all
-
   end
 
   # GET /events/1/edit
