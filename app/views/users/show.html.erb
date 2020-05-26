@@ -3,6 +3,7 @@
 		<div class="sticky-top sticky-offset">
 
 
+
 			<div class="card ml-4 shadow fixed-card">
 			<% if @user.profile.dp_url.empty? %>
 			<%= image_tag("patterns/user-pic.png", :class=>"card-img-top bg-orange") %>
@@ -16,7 +17,7 @@
 					<p>
 						<i class="fas fa-crown mr-2"></i>Events Hosted: <%=@user.events.count%>
 
-					<% if @user.profile.birthday!=""%>
+					<% if @user.profile.birthday != nil%>
 						<br><i class="fas fa-birthday-cake mr-2"></i><%= @user.profile.birthday.strftime("%d %B") %>
 					<% end %>
 					
