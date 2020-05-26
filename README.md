@@ -31,6 +31,7 @@ http://localhost:3000
 
 ## Design artifacts
 [ERD](https://github.com/dyanawu/sei-proj-petplaydates/blob/master/docs/pawdates_erd.png)
+
 [Wireframe](https://github.com/dyanawu/sei-proj-petplaydates/blob/master/docs/pawdates_wireframe.pdf)
 
 ## Unsolved problems
