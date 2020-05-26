@@ -10,14 +10,18 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     if params[:filter]
-      @events = Event.where("type_id = ?", params[:filter]["type_id"].to_i).includes(:user, :pets)
+      @filter = Type.find(params[:filter].to_i).name
+      @events = Event.where("type_id = ?", params[:filter].to_i).includes(:user, :pets)
+      if params[:sort]
+        @sort = params[:sort]
+      end
       if params[:sort] == "recent"
         @events = @events.order(id: :desc)
       else
         @events = @events.order(id: :asc)
       end
     else
-      @events = Event.all.includes(:user, :pets)
+      @events = Event.all.includes(:user, :pets).order(id: :desc)
     end
   end
 

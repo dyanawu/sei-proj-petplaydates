@@ -1,69 +1,72 @@
 <div class="page-header bg-orange">
-  <div class="page-header-text text-white font-weight-bold">
-    Discover events that spark joy.
-  </div>
+	<div class="page-header-text text-white font-weight-bold">
+		Discover events that spark joy.
+	</div>
 </div>
 <div class="row" id="body-row">
-  <div id="sidebar-container" class="d-md-block col-lg-3 col-md-4 bg-white">
-    <div class="sticky-top sticky-offset">
+	<div id="sidebar-container" class="d-md-block col-lg-3 col-md-4 bg-white">
+		<div class="sticky-top sticky-offset">
 
-      <div class="search-sidebar-container p-4 shadow">
+			<div class="search-sidebar-container p-4 shadow">
 
-        <div class="search-sidebar">
+				<div class="search-sidebar">
 
-          <h4>What are you looking for?</h4>
-          <form action="/events">
-            <table>
-              <tr>
-                <td>Sort By</td>
-                <td>
-                  <select name="sort" id="">
-                    <option value="recent">Recent</option>
-                    <option value="oldest">Oldest</option>
-                  </select>
-                </td>
-              </tr>
+					<h5>
+						Searching for <%= @filter.nil? ? "all" : @filter %> events <%= @sort.nil? ? "" : "by #{@sort}" %>
+					</h5>
 
-              <tr>
-                <td> <strong>Filter By</strong></td>
-              </tr>
 
-              <tr>
-                <td>Event Type</td>
-                <td>
-                  <%= select("filter", "type_id", Type.all.collect {|t| [ t.name.capitalize, t.id ] }) %>
-                </td>
-              </tr>
+					<form action="/events">
+						<div class="row">
 
-              <tr>
-                <td><button type="submit">Go!</button></td>
-              </tr>
-            </table>
-          </form>
-        </div>
-      </div>
+							<div class="col-4">
+								<label for="sort">Sort by</label>
+							</div>
 
-    </div>
-  </div>
+							<div class="col-8">
+								<select name="sort" id="sort" class="form-control">
+									<option value="recent">Recent</option>
+									<option value="oldest">Oldest</option>
+								</select>
+							</div>
 
-  <div class="col-lg-9 col-md-8 main-content">
-    <div class="row">
-      <% if @events.length > 0 %>
-        <div class="h4 my-5 mx-auto">Showing <%= @events[0].type.name %> events</div>
-      <% else %>
-        <div class="h4 my-5">No events of this type currently! <%= link_to 'Start one?', new_event_path %></div>
-      <% end %>
-    </div>
-    <div class="row card-deck">
-      <% if @events.length > 0 %>
-      <% @events.each do |event| %>
-	<div class="col-xl-3 col-lg-4 col-md-6 mb-3">
-	  <%= render :partial => 'events/event_card', locals: { event: event } %>
+						</div>
+
+						<div class="row">
+							<div class="col-4">
+								<label for="filter">Filter by</label>
+							</div>
+							<div class="col-8">
+								<%= select_tag "filter", options_from_collection_for_select(Type.all, "id", "name"), :class=>"form-control"%>
+							</div>
+						</div>
+
+
+						<button class="btn btn-sm btn-secondary mt-3 btn-block" type="submit">Go!</button>
+
+					</form>
+
+				</div>
+			</div>
+		</div>
 	</div>
 
-      <% end %>
-      <% end %>
-    </div>
+	<div class="col-lg-9 col-md-8 main-content">
+		<div class="row">
+			<% if @events.length <1 %>
+			<div class="h4 mb-5">No events of this type currently! <%= link_to 'Start one?', new_event_path %></div>
+			<% end %>
+		</div>
+		<div class="row card-deck">
+			<% if @events.length > 0 %>
+			<% @events.each do |event| %>
+			<div class="col-xl-3 col-lg-4 col-sm-6 col-6 mb-3">
+				<%= render :partial => 'events/event_card', locals: { event: event } %>
+			</div>
 
-  </div>
+			<% end %>
+			<% end %>
+		</div>
+
+	</div>
 </div>

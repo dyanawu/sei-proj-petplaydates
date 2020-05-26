@@ -1,16 +1,22 @@
 @import "colors";
 
 .page-header {
-	min-height: 35vh;
+	height: 35vh;
 	margin-bottom: 5vh;
 	padding: 2% 7%;
 	text-align: center;
 	background-image: image_url("patterns/pattern3.png");
+	font-size: 3rem;
+
+	@include media-breakpoint-down(sm) { 
+		height: 15vh;
+		font-size: 1.3rem;
+		
+    }
 }
 
 .page-header-text {
 	width: 50%;
-	font-size: 3rem;
     margin: 5% auto;
     animation: zoomIn 1s;
 
