@@ -1,16 +1,22 @@
 @import "colors";
 
 .page-header {
-	min-height: 35vh;
+	height: 35vh;
 	margin-bottom: 5vh;
 	padding: 2% 7%;
 	text-align: center;
 	background-image: image_url("patterns/pattern3.png");
+	font-size: 3rem;
+
+	@include media-breakpoint-down(sm) { 
+		height: 15vh;
+		font-size: 1.3rem;
+		
+    }
 }
 
 .page-header-text {
 	width: 50%;
-	font-size: 3rem;
     margin: 5% auto;
     animation: zoomIn 1s;
 
@@ -25,6 +31,11 @@
 	height: 95vh;
 	padding: 5vh 10% 0 10%;
 	background-color: $orange;
+	background-image: image_url("index/main-header.png");
+	background-size: cover;
+	background-position: center; /* Center the image */
+	background-repeat: no-repeat; /* Do not repeat the image */
+
 
 	.header {
 		position: relative;
@@ -41,6 +52,10 @@
 		font-size: 6rem;
 		font-weight: bolder;
 		letter-spacing: 1px;
+		@media (max-width: 768px) {
+			font-size: 3rem;
+		 }
+
 	}
 
 	p {
