@@ -104,6 +104,7 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1.json
   def update
     @types = Type.all
+    @event = parse_event_to_local_time(@event)
     if params[:event][:img_url] != ""
       uploaded_file = params[:event][:img_url].path
       cloudinary_file = Cloudinary::Uploader.upload(uploaded_file)
