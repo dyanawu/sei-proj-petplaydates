@@ -18,7 +18,7 @@ _Less use of Bootstrap cards where it isn’t appropriate, e.g. in the Events in
 
 2. What in our code and program design in the project went well? Is there anything we would do the same next time?
 
-_Using libraries whenever available helped us reduce code written (snippet 1)_
+_Using libraries whenever available helped us reduce code written (snippet 1, using owl carousel)_
 
 _Writing helper methods (snippet 2)_
 
