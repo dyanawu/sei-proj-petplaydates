@@ -2,7 +2,7 @@
 
 1. What in our process and approach to this project would we do differently next time?
 
-_More functionality/userflow planning to map out relational constraights might have helped us reduce the number of migrations we needed to run over the course of the project._
+_More functionality/userflow planning to map out relational constraints might have helped us reduce the number of migrations we needed to run over the course of the project._
 
 2. What in our process and approach to this project went well that we would repeat next time?
 
