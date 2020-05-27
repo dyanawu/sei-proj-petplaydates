@@ -25,46 +25,47 @@ _Writing helper methods (snippet 2)_
   For each, please include code examples that each team member wrote.
   1. Code snippet up to 20 lines.
 
-    ``` ruby
-        # Snippet 1
-        # using active_record_union let us do this instead to
-        # join two queries into one ActiveRecord Collection
-        # app/models/user.rb
-        def events_all
-          self.events_attending.union(self.events).distinct
-        end
-    ```
-    
-    ```ruby
-      # Snippet 2
-      # app/controllers/events_controller.rb
-      def rsvp
-        @event = Event.find(params[:id])
-        @pet_ids = event_params[:pet_ids].reject!(&:blank?)
+```ruby
+# Snippet 1
+# using active_record_union let us do this instead to
+# join two queries into one ActiveRecord Collection
+# app/models/user.rb
+def events_all
+  self.events_attending.union(self.events).distinct
+end
+```
+
+``` ruby
+# Snippet 2
+# app/controllers/events_controller.rb
+def rsvp
+  @event = Event.find(params[:id])
+  @pet_ids = event_params[:pet_ids].reject!(&:blank?)
+
+  #Get unselected pets.
+  unselected_pets = current_user.pets.select{ | pet | !@pet_ids.include?(pet.id.to_s)}
+
+  # For each pet unselected, uninvite them if already rsvped.
+  unselected_pets.each do |pet|
+    @event.pets.delete(pet)
+  end
+
+  # For each pet selected, add them to event if not already rsvped.
+  @pet_ids.each do |id|
+    pet = Pet.find(id)
+      if !pet.is_rsvped(@event)
+      @event.pets << pet
+
+      #Send email to event host to notify of rsvp
+      @host = User.find(@event.user_id)
+      UserMailer.with(host: @host, pet: pet, event: @event).rsvp_to_host.deliver_later
+    end
+  end
  
-        #Get unselected pets.
-        unselected_pets = current_user.pets.select{ | pet | !@pet_ids.include?(pet.id.to_s)}
- 
-        # For each pet unselected, uninvite them if already rsvped.
-        unselected_pets.each do |pet|
-          @event.pets.delete(pet)
-        end
- 
-        # For each pet selected, add them to event if not already rsvped.
-        @pet_ids.each do |id|
-          pet = Pet.find(id)
-            if !pet.is_rsvped(@event)
-            @event.pets << pet
- 
-            #Send email to event host to notify of rsvp
-            @host = User.find(@event.user_id)
-            UserMailer.with(host: @host, pet: pet, event: @event).rsvp_to_host.deliver_later
-          end
-        end
- 
-        redirect_to @event
-      end
- ```
+  redirect_to @event
+end
+```
+
 
   2. Code design documents or architecture drawings / diagrams.
 
@@ -73,15 +74,15 @@ _Writing helper methods (snippet 2)_
 
 _dw: Committing frequently let me roll back almost as frequently._
 
-_Chels: Using more methods to get data _
+_Chels: Using more methods to get data_
 
-_Dian: _
+_Dian:_
 _Getting used to the whole git checkout and rebase process_
 _Pacing myself throughout the 1 week+_
 
 2. What habits did I have during this unit that I can improve on?
 
-_dw: Maybe a slightly low level communication overall._
+_dw: Maybe a slightly low communication level overall._
 
 _Chels: Tend to start work late, and do things pretty slowly._
 
@@ -89,6 +90,6 @@ _Chels: Tend to start work late, and do things pretty slowly._
 
 _dw: a little rushed? For me, the underlying workings of Rails could have been a little more deeply covered._
 
-_Dian: Yep, rushed.
+_Dian: Yep, rushed._
 
 _Chels: It was ok, but I thought that choosing Ruby on Rails was a little odd since many are saying it’s dying right now_
